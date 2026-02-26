@@ -4,6 +4,8 @@
  */
 
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { 
   Shield, 
   Network, 
@@ -21,51 +23,26 @@ import {
   Lock,
   Zap,
   BarChart3,
-  Users
+  Users,
+  Headset,
+  Code2,
+  Cloud,
+  ShoppingBag,
+  CreditCard,
+  LifeBuoy,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Twitter,
+  Monitor
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
-const IBLogo = ({ className = "w-12 h-12" }: { className?: string }) => (
-  <div className={`relative ${className}`}>
-    <svg viewBox="0 0 400 400" className="w-full h-full">
-      {/* Outer Ring */}
-      <circle cx="200" cy="200" r="185" fill="none" stroke="currentColor" strokeWidth="22" />
-      
-      {/* "ib" text area */}
-      <g transform="translate(85, 85)">
-        {/* 'i' */}
-        <rect x="10" y="45" width="22" height="95" fill="currentColor" />
-        <rect x="10" y="5" width="22" height="22" fill="currentColor" />
-        
-        {/* 'b' */}
-        <path d="M55 5 V140 H160 C200 140 225 115 225 75 C225 35 200 5 160 5 H55 Z M77 27 H160 C185 27 203 45 203 75 C203 105 185 118 160 118 H77 V27 Z" fill="currentColor" />
-      </g>
-      
-      {/* Divider Line */}
-      <rect x="80" y="245" width="240" height="6" fill="currentColor" />
-      
-      {/* "méxico" text area */}
-      <g transform="translate(82, 270)">
-        {/* m */}
-        <path d="M5 25 V75 M5 35 C5 15 30 15 30 35 V75 M30 35 C30 15 55 15 55 35 V75" fill="none" stroke="currentColor" strokeWidth="11" strokeLinecap="round" />
-        {/* é */}
-        <path d="M75 50 H105 C105 30 75 30 75 50 C75 75 105 75 105 75" fill="none" stroke="currentColor" strokeWidth="11" strokeLinecap="round" />
-        <path d="M90 15 L100 5" fill="none" stroke="currentColor" strokeWidth="9" strokeLinecap="round" />
-        {/* x */}
-        <path d="M125 30 L155 75 M155 30 L125 75" fill="none" stroke="currentColor" strokeWidth="11" strokeLinecap="round" />
-        {/* i */}
-        <path d="M175 30 V75" fill="none" stroke="currentColor" strokeWidth="11" strokeLinecap="round" />
-        <circle cx="175" cy="10" r="6" fill="currentColor" />
-        {/* c */}
-        <path d="M225 30 C195 30 195 75 225 75" fill="none" stroke="currentColor" strokeWidth="11" strokeLinecap="round" />
-        {/* o */}
-        <circle cx="265" cy="52" r="22" fill="none" stroke="currentColor" strokeWidth="11" />
-      </g>
-    </svg>
-  </div>
-);
-
 const scrollToSection = (id: string) => {
+  if (window.location.pathname !== '/') {
+    window.location.href = `/#${id}`;
+    return;
+  }
   const element = document.getElementById(id);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
@@ -74,6 +51,7 @@ const scrollToSection = (id: string) => {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
@@ -81,11 +59,19 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  if (location.pathname !== '/') return null;
+
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
-        <div className="flex items-center gap-3 cursor-pointer" onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
-          <IBLogo className="w-14 h-14 text-brand-primary" />
+        <div className="flex items-center gap-3 cursor-pointer" onClick={() => {
+          if (window.location.pathname !== '/') {
+            window.location.href = '/';
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}>
+          <img src="/Logo_ib-mexico.png" alt="Inside Business Mexico" className="w-14 h-14 object-contain" referrerPolicy="no-referrer" />
           <div className="flex flex-col -gap-1">
             <span className="font-display font-bold text-xl tracking-tighter leading-none">Inside Business</span>
             <span className="font-display font-medium text-[10px] tracking-[0.2em] text-brand-primary uppercase">Mexico</span>
@@ -280,10 +266,10 @@ const Services = () => {
       color: 'from-red-600/20 to-brand-primary/20'
     },
     {
-      title: 'WiFi de Alta Densidad',
-      desc: 'Soluciones inalámbricas robustas para grandes proyectos, almacenes y oficinas corporativas.',
-      details: 'Diseñamos redes WiFi capaces de soportar cientos de dispositivos simultáneos sin pérdida de rendimiento. Ideales para centros de convenciones, almacenes logísticos y oficinas abiertas. Utilizamos herramientas de Site Survey para garantizar una cobertura total y roaming sin interrupciones.',
-      icon: Wifi,
+      title: 'Comunicaciones Unificadas',
+      desc: 'Sistemas de telefonía IP, videoconferencia y herramientas de colaboración en tiempo real.',
+      details: 'Integramos voz, video y mensajería en una sola plataforma. Soluciones de telefonía IP (Avaya, Cisco, Grandstream) y sistemas de videoconferencia profesional para salas de juntas y trabajo híbrido. Mejore la productividad de su equipo con herramientas de colaboración de última generación.',
+      icon: Headset,
       color: 'from-red-700/20 to-brand-primary/20'
     },
     {
@@ -294,18 +280,39 @@ const Services = () => {
       color: 'from-red-800/20 to-brand-primary/20'
     },
     {
+      title: 'Help desk y Service desk',
+      desc: 'Soporte técnico especializado con metodología ITIL para la continuidad de su operación.',
+      details: 'Ofrecemos soporte técnico de primer y segundo nivel bajo el esquema SPOC (Single Point of Contact). Basamos nuestros procesos en ITIL para garantizar una atención eficiente, rápida y organizada, asegurando que su infraestructura tecnológica siempre esté operativa.',
+      icon: LifeBuoy,
+      color: 'from-red-900/20 to-brand-primary/20'
+    },
+    {
+      title: 'Desarrollo de Software y Cloud',
+      desc: 'Aplicaciones a la medida y soluciones en la nube (AWS, Azure, Google Cloud).',
+      details: 'Creamos software personalizado que se adapta a los procesos únicos de su negocio utilizando metodologías ágiles (SCRUM). Además, migramos y gestionamos sus cargas de trabajo en las principales nubes públicas para reducir costos y aumentar la escalabilidad.',
+      icon: Code2,
+      color: 'from-zinc-800/20 to-brand-primary/20'
+    },
+    {
+      title: 'Retail',
+      desc: 'Soluciones tecnológicas especializadas para el sector comercio y puntos de venta.',
+      details: 'Proveemos hardware y software especializado para el sector retail, desde terminales punto de venta hasta sistemas de gestión de inventarios y conectividad para sucursales, optimizando la experiencia de compra de sus clientes.',
+      icon: ShoppingBag,
+      color: 'from-red-500/20 to-brand-primary/20'
+    },
+    {
+      title: 'Financiamiento y Arrendamiento',
+      desc: 'Opciones flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
+      details: 'Facilitamos la actualización tecnológica de su organización mediante esquemas de financiamiento y arrendamiento puro. Plazos flexibles desde 30 hasta 180 días sin intereses y opciones de respaldo financiero a través de HP y Dell Financial Services.',
+      icon: CreditCard,
+      color: 'from-red-600/20 to-brand-primary/20'
+    },
+    {
       title: 'Licenciamiento Software',
       desc: 'Gestión integral de licencias empresariales para asegurar el cumplimiento y la operatividad.',
       details: 'Asesoría experta en licenciamiento de Microsoft 365, Azure, Adobe y soluciones de seguridad. Ayudamos a su empresa a optimizar costos de software y a mantenerse en cumplimiento legal con auditorías preventivas.',
       icon: FileText,
-      color: 'from-red-900/20 to-brand-primary/20'
-    },
-    {
-      title: 'Impresión Empresarial',
-      desc: 'Sistemas de impresión gestionada para optimizar costos y mejorar la productividad.',
-      details: 'Servicios administrados de impresión que reducen sus costos operativos hasta en un 30%. Equipos multifuncionales de alta gama con software de control de impresión y suministro automático de consumibles.',
-      icon: Printer,
-      color: 'from-zinc-800/20 to-brand-primary/20'
+      color: 'from-red-700/20 to-brand-primary/20'
     }
   ];
 
@@ -553,7 +560,7 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <div className="font-bold text-sm lg:text-base">Email</div>
-                      <div className="text-zinc-400 text-sm lg:text-base">contacto@ibmexico.com.mx</div>
+                      <div className="text-zinc-400 text-sm lg:text-base">ventas@ib-mexico.com</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -562,7 +569,7 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <div className="font-bold text-sm lg:text-base">Teléfono</div>
-                      <div className="text-zinc-400 text-sm lg:text-base">+52 (55) 1234 5678</div>
+                      <div className="text-zinc-400 text-sm lg:text-base">993 310 0951</div>
                     </div>
                   </div>
                   <div className="flex items-start gap-4">
@@ -571,7 +578,7 @@ const ContactForm = () => {
                     </div>
                     <div>
                       <div className="font-bold text-sm lg:text-base">Ubicación</div>
-                      <div className="text-zinc-400 text-sm lg:text-base">Ciudad de México, México</div>
+                      <div className="text-zinc-400 text-sm lg:text-base">2A Cda. de Marcelino Cabieces 407, Col. Pino Suarez, 86168 Villahermosa, Tab.</div>
                     </div>
                   </div>
                 </div>
@@ -616,7 +623,7 @@ const ContactForm = () => {
                     <input 
                       type="tel" 
                       className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
-                      placeholder="55 1234 5678"
+                      placeholder="993 310 0951"
                     />
                   </div>
                 </div>
@@ -624,10 +631,14 @@ const ContactForm = () => {
                 <div className="space-y-2">
                   <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Servicio de Interés</label>
                   <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base">
-                    <option className="bg-brand-dark">Networking</option>
-                    <option className="bg-brand-dark">Ciberseguridad</option>
-                    <option className="bg-brand-dark">WiFi Proyectos</option>
-                    <option className="bg-brand-dark">Cómputo Empresarial</option>
+                    <option className="bg-brand-dark">Networking Empresarial</option>
+                    <option className="bg-brand-dark">Ciberseguridad Avanzada</option>
+                    <option className="bg-brand-dark">Comunicaciones Unificadas</option>
+                    <option className="bg-brand-dark">Help desk y Service desk</option>
+                    <option className="bg-brand-dark">Desarrollo de Software y Cloud</option>
+                    <option className="bg-brand-dark">Retail / Punto de Venta</option>
+                    <option className="bg-brand-dark">Financiamiento / Arrendamiento</option>
+                    <option className="bg-brand-dark">Licenciamiento Software</option>
                     <option className="bg-brand-dark">Otro</option>
                   </select>
                 </div>
@@ -661,34 +672,34 @@ const Footer = () => {
   return (
     <footer className="bg-brand-dark pt-20 pb-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <IBLogo className="w-12 h-12 text-brand-primary" />
+              <img src="/Logo_ib-mexico.png" alt="Inside Business Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
               <span className="font-display font-bold text-xl tracking-tighter">Inside Business Mexico</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed">
               Líderes en soluciones de infraestructura TI y ciberseguridad para el sector empresarial en México. Innovación y confianza en cada proyecto.
             </p>
             <div className="flex gap-4">
-              {['linkedin', 'twitter', 'facebook'].map((social) => (
-                <a key={social} href="#" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
-                  <span className="sr-only">{social}</span>
-                  <div className="w-5 h-5 bg-current opacity-50" />
-                </a>
-              ))}
+              <a href="https://mx.linkedin.com/company/ib-mexico" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
+                <Linkedin size={20} />
+              </a>
+              <a href="https://www.facebook.com/ibmexico" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
+                <Facebook size={20} />
+              </a>
+              <a href="https://www.instagram.com/ibmexico/" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
+                <Instagram size={20} />
+              </a>
+              <a href="https://x.com/ibmexico" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
+                <Twitter size={20} />
+              </a>
+              <a href="https://www.tiktok.com/@ibmexico" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.09-.26-.18-.38-.28v5.44c0 2.1-.46 4.3-2.04 5.76-1.41 1.32-3.4 1.94-5.29 1.82-1.97-.11-3.92-1.11-5.01-2.75-1.1-1.65-1.26-3.75-.45-5.52.8-1.76 2.5-3.05 4.39-3.33 1.06-.15 2.15-.04 3.15.37v4.07c-.43-.21-.9-.33-1.38-.35-1.1-.05-2.23.44-2.85 1.35-.63.92-.61 2.24.06 3.12.66.87 1.81 1.25 2.85 1.01 1.04-.24 1.88-1.17 2.05-2.22.05-.27.06-.55.06-.82V.02z"/>
+                </svg>
+              </a>
             </div>
-          </div>
-          
-          <div>
-            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Servicios</h4>
-            <ul className="space-y-4 text-sm text-zinc-500">
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Networking</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Ciberseguridad</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">WiFi Corporativo</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Cómputo & Storage</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Licenciamiento</a></li>
-            </ul>
           </div>
           
           <div>
@@ -703,26 +714,24 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Newsletter</h4>
-            <p className="text-zinc-500 text-sm mb-4">Recibe actualizaciones sobre ciberseguridad y tendencias TI.</p>
-            <div className="flex gap-2">
-              <input 
-                type="email" 
-                placeholder="Tu email" 
-                className="bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-sm focus:outline-none focus:border-brand-primary w-full"
-              />
-              <button className="bg-brand-primary text-white p-2 rounded-lg hover:bg-red-700 transition-colors">
-                <ArrowRight size={20} />
-              </button>
-            </div>
+            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Soporte Remoto</h4>
+            <p className="text-zinc-500 text-sm mb-4">Accede a asistencia técnica inmediata a través de TeamViewer.</p>
+            <a 
+              href="https://get.teamviewer.com/qs_corpmx" 
+              target="_blank" 
+              rel="noreferrer"
+              className="btn-primary w-full text-sm py-2.5"
+            >
+              <Monitor size={18} />
+              Descargar TeamViewer
+            </a>
           </div>
         </div>
         
         <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-600">
           <p>© {new Date().getFullYear()} Inside Business Mexico. Todos los derechos reservados.</p>
           <div className="flex gap-6">
-            <a href="#" className="hover:text-zinc-400 transition-colors">Aviso de Privacidad</a>
-            <a href="#" className="hover:text-zinc-400 transition-colors">Términos y Condiciones</a>
+            <Link to="/privacidad" className="hover:text-zinc-400 transition-colors">Aviso de Privacidad</Link>
           </div>
         </div>
       </div>
@@ -748,18 +757,45 @@ const WhatsAppButton = () => {
   );
 };
 
-export default function App() {
+const Home = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      }
+    }
+  }, [location]);
+
   return (
-    <div className="relative">
-      <Navbar />
+    <>
       <Hero />
       <Stats />
       <Services />
       <CybersecurityFocus />
       <AboutUs />
       <ContactForm />
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    </>
+  );
+};
+
+export default function App() {
+  return (
+    <Router>
+      <div className="relative">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/privacidad" element={<PrivacyPolicy />} />
+        </Routes>
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </Router>
   );
 }
