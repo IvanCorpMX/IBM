@@ -516,7 +516,7 @@ const AboutUs = () => {
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass-card p-2">
               <img 
-                src="https://picsum.photos/seed/ib-team-mexico/800/800" 
+                src="/equipo-ib.png" 
                 alt="Equipo Inside Business Mexico" 
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700"
                 referrerPolicy="no-referrer"
