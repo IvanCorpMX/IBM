@@ -5,7 +5,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 import PrivacyPolicy from './pages/PrivacyPolicy';
+import ServiceDetail from './pages/ServiceDetail';
 import { 
   Shield, 
   Network, 
@@ -49,6 +51,111 @@ const scrollToSection = (id: string) => {
   }
 };
 
+const StructuredData = () => {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Inside Business Mexico",
+    "image": "https://ib-mexico.com/Logo_ib-mexico.png",
+    "@id": "https://ib-mexico.com",
+    "url": "https://ib-mexico.com",
+    "telephone": "+529933100951",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "2A Cda. de Marcelino Cabieces 407, Col. Pino Suarez",
+      "addressLocality": "Villahermosa",
+      "addressRegion": "Tabasco",
+      "postalCode": "86168",
+      "addressCountry": "MX"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 17.9894,
+      "longitude": -92.9248
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    },
+    "sameAs": [
+      "https://www.facebook.com/ibmexico",
+      "https://mx.linkedin.com/company/ib-mexico",
+      "https://www.instagram.com/ibmexico/"
+    ],
+    "serviceArea": {
+      "@type": "GeoCircle",
+      "itemOffered": ["Ciberseguridad", "Redes", "Soporte Técnico"],
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 17.9894,
+        "longitude": -92.9248
+      },
+      "geoRadius": "500000"
+    }
+  };
+
+  return (
+    <script type="application/ld+json">
+      {JSON.stringify(schema)}
+    </script>
+  );
+};
+
+const PartnerCarousel = () => {
+  // Sin backend, debemos definir los nombres de los archivos manualmente aquí.
+  // Simplemente añade o quita nombres de esta lista según los archivos .png que subas a /public/partners/
+  const partnerLogos = [
+    'fortinet.png',
+    'dell.png',
+    'microsoft.png',
+    'kaspersky.png',
+    'eset.png',
+    'poly.png'
+  ];
+
+  const partners = partnerLogos.map(logo => ({
+    name: logo.split('.')[0],
+    logo: `/partners/${logo}`
+  }));
+
+  return (
+    <div className="mt-12 overflow-hidden relative">
+      <div className="flex items-center gap-6 mb-4">
+        <span className="text-xs font-bold uppercase tracking-widest text-zinc-500 whitespace-nowrap">Partners Certificados</span>
+        <div className="h-px bg-white/10 w-full" />
+      </div>
+      <div className="flex gap-12 items-center animate-marquee whitespace-nowrap py-4">
+        {[...partners, ...partners, ...partners].map((partner, i) => (
+          <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+            <img 
+              src={partner.logo} 
+              alt={`Partner certificado ${partner.name} - Inside Business Mexico`} 
+              className="h-8 lg:h-10 w-auto object-contain"
+              onError={(e) => {
+                // Si la imagen no existe, mostramos el nombre como texto para que no quede vacío
+                const target = e.target as HTMLImageElement;
+                target.style.display = 'none';
+                const span = document.createElement('span');
+                span.className = "font-display font-black text-lg lg:text-xl italic uppercase text-zinc-600";
+                span.innerText = partner.name;
+                target.parentNode?.appendChild(span);
+              }}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const location = useLocation();
@@ -71,7 +178,7 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }}>
-          <img src="/Logo_ib-mexico.png" alt="Inside Business Mexico" className="w-14 h-14 object-contain" referrerPolicy="no-referrer" />
+          <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-14 h-14 object-contain" referrerPolicy="no-referrer" />
           <div className="flex flex-col -gap-1">
             <span className="font-display font-bold text-xl tracking-tighter leading-none">Inside Business</span>
             <span className="font-display font-medium text-[10px] tracking-[0.2em] text-brand-primary uppercase">Mexico</span>
@@ -107,7 +214,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[40vh] lg:min-h-screen flex items-center pt-24 lg:pt-20 pb-12 lg:pb-0 overflow-hidden">
+    <section className="relative min-h-[40vh] lg:min-h-screen flex items-center pt-32 lg:pt-36 pb-12 lg:pb-0 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px]" />
@@ -121,12 +228,12 @@ const Hero = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-4 lg:mb-6">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] sm:text-xs font-bold uppercase tracking-widest mb-2 lg:mb-3">
             <Zap size={14} />
             Infraestructura TI de Próxima Generación
           </div>
           <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 lg:mb-6">
-            Blindamos tu <span className="text-gradient">Infraestructura</span>, Impulsamos tu Negocio.
+            Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad en Villahermosa y el Sureste de México.
           </h1>
           <p className="text-sm sm:text-lg text-zinc-400 mb-6 lg:mb-8 max-w-xl leading-relaxed">
             Networking, Ciberseguridad y Soluciones de Cómputo Empresarial diseñadas para la era digital. Autoridad técnica y confianza para las empresas líderes en México.
@@ -147,15 +254,7 @@ const Hero = () => {
             </button>
           </div>
           
-          <div className="mt-12 flex items-center gap-6 grayscale opacity-50">
-            <span className="text-xs font-bold uppercase tracking-widest text-zinc-500">Partners Certificados</span>
-            <div className="flex gap-8 items-center font-display font-black text-xl italic">
-              <span>CISCO</span>
-              <span>FORTINET</span>
-              <span>DELL</span>
-              <span>HP</span>
-            </div>
-          </div>
+          <PartnerCarousel />
         </motion.div>
 
         <motion.div 
@@ -248,71 +347,60 @@ const Stats = () => {
 };
 
 const Services = () => {
-  const [selectedService, setSelectedService] = useState<any>(null);
-
   const services = [
     {
-      title: 'Networking Empresarial',
+      title: 'Networking y Conectividad',
+      slug: 'networking-y-conectividad',
       desc: 'Diseño e implementación de redes LAN, switching y cableado estructurado de alto rendimiento.',
-      details: 'Nuestras soluciones de networking están diseñadas para soportar las demandas críticas de las empresas modernas. Implementamos infraestructuras escalables, seguras y de alta disponibilidad utilizando tecnología de punta de fabricantes líderes como Cisco y Aruba. Desde el diseño lógico hasta la implementación física de cableado estructurado categoría 6A y fibra óptica.',
       icon: Network,
-      color: 'from-red-500/20 to-brand-primary/20'
     },
     {
-      title: 'Ciberseguridad Avanzada',
+      title: 'Ciberseguridad Empresarial',
+      slug: 'ciberseguridad-empresarial',
       desc: 'Firewalls de próxima generación (NGFW), protección perimetral y auditorías de seguridad.',
-      details: 'Protegemos su perímetro y sus datos contra las amenazas más sofisticadas. Implementamos Firewalls de Próxima Generación (Fortinet, Palo Alto), sistemas de detección de intrusos (IDS/IPS), y soluciones de seguridad en el endpoint. Realizamos auditorías de vulnerabilidades periódicas para asegurar que su infraestructura cumpla con los más altos estándares de seguridad.',
       icon: Shield,
-      color: 'from-red-600/20 to-brand-primary/20'
     },
     {
       title: 'Comunicaciones Unificadas',
+      slug: 'comunicaciones-unificadas',
       desc: 'Sistemas de telefonía IP, videoconferencia y herramientas de colaboración en tiempo real.',
-      details: 'Integramos voz, video y mensajería en una sola plataforma. Soluciones de telefonía IP (Avaya, Cisco, Grandstream) y sistemas de videoconferencia profesional para salas de juntas y trabajo híbrido. Mejore la productividad de su equipo con herramientas de colaboración de última generación.',
       icon: Headset,
-      color: 'from-red-700/20 to-brand-primary/20'
     },
     {
       title: 'Cómputo y Almacenamiento',
+      slug: 'computo-y-almacenamiento',
       desc: 'Servidores, almacenamiento empresarial y soluciones de virtualización a medida.',
-      details: 'Proveemos infraestructura de cómputo robusta (Dell, HP, Lenovo) y sistemas de almacenamiento SAN/NAS de alto rendimiento. Especialistas en virtualización con VMware y Hyper-V para optimizar sus recursos de hardware y garantizar la continuidad del negocio.',
       icon: Cpu,
-      color: 'from-red-800/20 to-brand-primary/20'
     },
     {
-      title: 'Help desk y Service desk',
+      title: 'Soporte Técnico y Help Desk',
+      slug: 'soporte-tecnico-y-help-desk',
       desc: 'Soporte técnico especializado con metodología ITIL para la continuidad de su operación.',
-      details: 'Ofrecemos soporte técnico de primer y segundo nivel bajo el esquema SPOC (Single Point of Contact). Basamos nuestros procesos en ITIL para garantizar una atención eficiente, rápida y organizada, asegurando que su infraestructura tecnológica siempre esté operativa.',
       icon: LifeBuoy,
-      color: 'from-red-900/20 to-brand-primary/20'
     },
     {
       title: 'Desarrollo de Software y Cloud',
+      slug: 'desarrollo-software-y-cloud',
       desc: 'Aplicaciones a la medida y soluciones en la nube (AWS, Azure, Google Cloud).',
-      details: 'Creamos software personalizado que se adapta a los procesos únicos de su negocio utilizando metodologías ágiles (SCRUM). Además, migramos y gestionamos sus cargas de trabajo en las principales nubes públicas para reducir costos y aumentar la escalabilidad.',
       icon: Code2,
-      color: 'from-zinc-800/20 to-brand-primary/20'
     },
     {
-      title: 'Retail',
-      desc: 'Soluciones tecnológicas especializadas para el sector comercio y puntos de venta.',
-      details: 'Proveemos hardware y software especializado para el sector retail, desde terminales punto de venta hasta sistemas de gestión de inventarios y conectividad para sucursales, optimizando la experiencia de compra de sus clientes.',
+      title: 'Retail y Equipamiento',
+      slug: 'retail-y-equipamiento',
+      desc: 'Venta de laptops, desktops, impresoras y periféricos de las mejores marcas.',
       icon: ShoppingBag,
-      color: 'from-red-500/20 to-brand-primary/20'
     },
     {
       title: 'Financiamiento y Arrendamiento',
-      desc: 'Opciones flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
-      details: 'Facilitamos la actualización tecnológica de su organización mediante esquemas de financiamiento y arrendamiento puro. Plazos flexibles desde 30 hasta 180 días sin intereses y opciones de respaldo financiero a través de HP y Dell Financial Services.',
+      slug: 'financiamiento-y-arrendamiento',
+      desc: 'Soluciones financieras flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
       icon: CreditCard,
-      color: 'from-red-600/20 to-brand-primary/20'
     },
     {
-      title: 'Licenciamiento Software',
-      desc: 'Gestión integral de licencias empresariales para asegurar el cumplimiento y la operatividad.',
-      details: 'Asesoría experta en licenciamiento de Microsoft 365, Azure, Adobe y soluciones de seguridad. Ayudamos a su empresa a optimizar costos de software y a mantenerse en cumplimiento legal con auditorías preventivas.',
-      icon: FileText,
-      color: 'from-red-700/20 to-brand-primary/20'
+      title: 'Infraestructura y Redes Empresariales',
+      slug: 'infraestructura-y-redes-empresariales',
+      desc: 'Soluciones de redes, cobre, fibra óptica y gestión de garantías para su empresa.',
+      icon: Network,
     }
   ];
 
@@ -320,9 +408,9 @@ const Services = () => {
     <section id="servicios" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Soluciones <span className="text-gradient">Integrales</span> de TI</h2>
+          <h2 className="text-4xl md:text-5xl font-bold mb-4">Servicios de TI <span className="text-gradient">Especializados</span> para Empresas en Tabasco</h2>
           <p className="text-zinc-400 max-w-2xl mx-auto">
-            Cubrimos todo el espectro tecnológico de tu empresa con autoridad técnica y los más altos estándares de calidad.
+            Cubrimos todo el espectro tecnológico de tu empresa con autoridad técnica y los más altos estándares de calidad en el sureste mexicano.
           </p>
         </div>
 
@@ -330,10 +418,10 @@ const Services = () => {
           {services.map((service, i) => (
             <motion.div 
               key={i}
-              whileHover={{ y: -10 }}
-              onClick={() => setSelectedService(service)}
-              className="glass-card p-8 rounded-2xl group cursor-pointer relative overflow-hidden border-white/5 hover:border-brand-primary/50 transition-all duration-500"
+              whileHover={{ y: -10, scale: 1.02 }}
+              className="glass-card p-8 rounded-2xl group relative overflow-hidden border-white/5 hover:border-brand-primary/50 hover:bg-white/[0.08] transition-all duration-500"
             >
+              <Link to={`/servicios/${service.slug}`} className="absolute inset-0 z-20" />
               <div className={`absolute inset-0 bg-gradient-to-br from-brand-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 group-hover:scale-110 transition-transform duration-300">
@@ -344,68 +432,13 @@ const Services = () => {
                   {service.desc}
                 </p>
                 <div className="flex items-center gap-2 text-brand-primary text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity">
-                  Saber más <ArrowRight size={14} />
+                  Ver detalles del servicio <ArrowRight size={14} />
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
       </div>
-
-      <AnimatePresence>
-        {selectedService && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setSelectedService(null)}
-              className="absolute inset-0 bg-brand-dark/90 backdrop-blur-sm"
-            />
-            <motion.div 
-              initial={{ opacity: 0, scale: 0.9, y: 20 }}
-              animate={{ opacity: 1, scale: 1, y: 0 }}
-              exit={{ opacity: 0, scale: 0.9, y: 20 }}
-              className="relative w-full max-w-2xl glass-card rounded-3xl p-8 lg:p-12 overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-2 bg-brand-primary" />
-              <button 
-                onClick={() => setSelectedService(null)}
-                className="absolute top-6 right-6 text-zinc-500 hover:text-white transition-colors"
-              >
-                <Zap size={24} className="rotate-45" />
-              </button>
-              
-              <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-8">
-                <selectedService.icon size={32} />
-              </div>
-              
-              <h3 className="text-3xl font-bold mb-6">{selectedService.title}</h3>
-              <p className="text-zinc-300 text-lg leading-relaxed mb-8">
-                {selectedService.details}
-              </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <button 
-                  onClick={() => {
-                    setSelectedService(null);
-                    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
-                  }}
-                  className="btn-primary"
-                >
-                  Solicitar Cotización
-                </button>
-                <button 
-                  onClick={() => setSelectedService(null)}
-                  className="btn-outline"
-                >
-                  Cerrar
-                </button>
-              </div>
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
     </section>
   );
 };
@@ -459,7 +492,7 @@ const CybersecurityFocus = () => {
               {[
                 'Protección contra Ransomware y Malware avanzado',
                 'Seguridad en la Nube y entornos híbridos',
-                'Consultoría experta en cumplimiento (ISO, NIST)',
+                'Consultoría experta en cumplimiento (ISO 27001)',
                 'Monitoreo proactivo de amenazas 24/7'
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-zinc-300">
@@ -495,12 +528,12 @@ const AboutUs = () => {
               <Users size={14} />
               Sobre Nosotros
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Expertos en <span className="text-brand-primary">Transformación</span> Digital</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-8">Expertos en <span className="text-brand-primary">Ciberseguridad</span> e Infraestructura TI en el Sureste de México</h2>
             <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
-              Inside Business Mexico nació con la misión de democratizar el acceso a infraestructura TI de clase mundial para empresas en crecimiento y grandes corporativos en todo el territorio nacional.
+              Inside Business Mexico nació en Villahermosa, Tabasco, con la misión de acercar infraestructura TI de clase mundial a empresas en crecimiento y grandes corporativos de todo el Sureste Mexicano.
             </p>
             <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
-              Con más de 15 años de experiencia acumulada, nuestro equipo de ingenieros certificados diseña soluciones que no solo resuelven problemas actuales, sino que preparan a su empresa para los retos del futuro.
+              Con más de 15 años de experiencia, nuestro equipo de ingenieros certificados diseña soluciones de networking, ciberseguridad y soporte técnico que no solo resuelven problemas actuales, sino que blindan a su empresa para los retos del futuro. Somos el aliado estratégico en tecnología para negocios en Tabasco, Veracruz, Campeche y Chiapas.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -523,7 +556,7 @@ const AboutUs = () => {
           >
             <div className="aspect-square rounded-3xl overflow-hidden glass-card p-2">
               <img 
-                src="/equipo-ib.png" 
+                src="/equipo-ib.webp" 
                 alt="Equipo Inside Business Mexico" 
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700"
                 referrerPolicy="no-referrer"
@@ -544,7 +577,7 @@ const ContactForm = () => {
   return (
     <section id="contacto" className="py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="glass-card rounded-3xl overflow-hidden border-white/10 shadow-2xl">
+        <div className="glass-card rounded-3xl overflow-hidden border-white/10 shadow-2xl hover:bg-white/[0.04] transition-colors duration-700">
           <div className="grid lg:grid-cols-2">
             <div className="p-8 lg:p-16 bg-gradient-to-br from-brand-primary/20 to-brand-secondary/20 relative">
               <div className="relative z-10">
@@ -595,7 +628,7 @@ const ContactForm = () => {
                     <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Nombre Completo</label>
                     <input 
                       type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
+                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
                       placeholder="Ej. Juan Pérez"
                     />
                   </div>
@@ -603,7 +636,7 @@ const ContactForm = () => {
                     <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Empresa</label>
                     <input 
                       type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
+                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
                       placeholder="Nombre de tu empresa"
                     />
                   </div>
@@ -614,7 +647,7 @@ const ContactForm = () => {
                     <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Correo Corporativo</label>
                     <input 
                       type="email" 
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
+                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
                       placeholder="juan@empresa.com"
                     />
                   </div>
@@ -622,7 +655,7 @@ const ContactForm = () => {
                     <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Teléfono</label>
                     <input 
                       type="tel" 
-                      className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
+                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
                       placeholder="993 310 0951"
                     />
                   </div>
@@ -630,7 +663,7 @@ const ContactForm = () => {
                 
                 <div className="space-y-2">
                   <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Servicio de Interés</label>
-                  <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base">
+                  <select className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base">
                     <option className="bg-brand-dark">Networking Empresarial</option>
                     <option className="bg-brand-dark">Ciberseguridad Avanzada</option>
                     <option className="bg-brand-dark">Comunicaciones Unificadas</option>
@@ -647,7 +680,7 @@ const ContactForm = () => {
                   <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Mensaje</label>
                   <textarea 
                     rows={3}
-                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors resize-none text-sm lg:text-base"
+                    className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors resize-none text-sm lg:text-base"
                     placeholder="Cuéntanos sobre tu proyecto..."
                   />
                 </div>
@@ -675,7 +708,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/Logo_ib-mexico.png" alt="Inside Business Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
+              <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
               <span className="font-display font-bold text-xl tracking-tighter">Inside Business Mexico</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed">
@@ -703,13 +736,24 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Empresa</h4>
+            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Servicios Principales</h4>
             <ul className="space-y-4 text-sm text-zinc-500">
-              <li><button onClick={() => scrollToSection('nosotros')} className="hover:text-brand-primary transition-colors">Sobre Nosotros</button></li>
-              <li><a href="/brochure-ib-mexico.pdf" target="_blank" rel="noreferrer" className="hover:text-brand-primary transition-colors">Descargar Brochure</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Casos de Éxito</a></li>
-              <li><a href="#" className="hover:text-brand-primary transition-colors">Partners</a></li>
-              <li><button onClick={() => scrollToSection('contacto')} className="hover:text-brand-primary transition-colors">Contacto</button></li>
+              <li><Link to="/servicios/networking-y-conectividad" className="hover:text-brand-primary transition-colors">Networking</Link></li>
+              <li><Link to="/servicios/ciberseguridad-empresarial" className="hover:text-brand-primary transition-colors">Ciberseguridad</Link></li>
+              <li><Link to="/servicios/soporte-tecnico-y-help-desk" className="hover:text-brand-primary transition-colors">Soporte Técnico</Link></li>
+              <li><Link to="/servicios/comunicaciones-unificadas" className="hover:text-brand-primary transition-colors">Comunicaciones unificadas</Link></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Áreas de Servicio</h4>
+            <ul className="space-y-4 text-sm text-zinc-500">
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Tabasco</span></li>
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Sur de Veracruz</span></li>
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Chiapas</span></li>
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Campeche</span></li>
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Mérida</span></li>
+              <li><span className="hover:text-brand-primary transition-colors cursor-default">Cancún</span></li>
             </ul>
           </div>
           
@@ -774,6 +818,10 @@ const Home = () => {
 
   return (
     <>
+      <Helmet>
+        <title>Ciberseguridad e Infraestructura TI en Villahermosa | IB México</title>
+        <meta name="description" content="Expertos en infraestructura TI y ciberseguridad en Villahermosa y el Sureste de México. Ofrecemos soporte técnico en Tabasco, redes empresariales y soluciones tecnológicas." />
+      </Helmet>
       <Hero />
       <Stats />
       <Services />
@@ -788,10 +836,12 @@ export default function App() {
   return (
     <Router>
       <div className="relative">
+        <StructuredData />
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/privacidad" element={<PrivacyPolicy />} />
+          <Route path="/servicios/:slug" element={<ServiceDetail />} />
         </Routes>
         <Footer />
         <WhatsAppButton />

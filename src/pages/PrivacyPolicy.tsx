@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { motion } from 'motion/react';
+import { Helmet } from 'react-helmet-async';
 import { Shield, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -10,6 +11,10 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-primary/30">
+      <Helmet>
+        <title>Aviso de Privacidad | Inside Business Mexico</title>
+        <meta name="description" content="Consulta nuestro aviso de privacidad. En IB México protegemos tus datos personales y garantizamos la confidencialidad de tu información." />
+      </Helmet>
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/80 backdrop-blur-lg border-b border-white/10 py-4">
         <div className="max-w-4xl mx-auto px-6 flex items-center justify-between">
@@ -18,7 +23,7 @@ const PrivacyPolicy = () => {
             <span className="text-sm font-medium">Volver al inicio</span>
           </Link>
           <div className="flex items-center gap-2">
-            <img src="/Logo_ib-mexico.png" alt="Inside Business Mexico" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
+            <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
             <span className="font-display font-bold text-lg tracking-tighter">Inside Business Mexico</span>
           </div>
         </div>
