@@ -313,8 +313,8 @@ const ServiceDetail = () => {
         </div>
       </header>
 
-      <main className="pt-32 pb-24 px-6">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-12">
+      <main className="pt-24 lg:pt-32 pb-16 lg:pb-24 px-4 lg:px-6">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8 lg:gap-12">
           {/* Main Content */}
           <div className="lg:col-span-2">
             <motion.div 
@@ -322,38 +322,42 @@ const ServiceDetail = () => {
               animate={{ opacity: 1, y: 0 }}
               className="mb-12"
             >
-              <div className="w-16 h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-8">
-                <Icon size={32} />
+              <div className="w-12 h-12 lg:w-16 lg:h-16 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-6 lg:mb-8">
+                <Icon size={28} className="lg:hidden" />
+                <Icon size={32} className="hidden lg:block" />
               </div>
-              <h1 className="text-4xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">{service.title}</h1>
-              <p className="text-xl text-zinc-400 leading-relaxed mb-8 font-medium">
+              <h1 className="text-2xl sm:text-4xl lg:text-6xl font-bold mb-4 lg:mb-6 tracking-tight leading-tight">{service.title}</h1>
+              <p className="text-base lg:text-xl text-zinc-400 leading-relaxed mb-6 lg:mb-8 font-medium">
                 {service.description}
               </p>
               
               <div 
-                className="prose prose-invert prose-zinc max-w-none space-y-6 text-zinc-400 leading-relaxed mb-12"
+                className="prose prose-sm lg:prose-base prose-invert prose-zinc max-w-none space-y-4 lg:space-y-6 text-zinc-400 leading-relaxed mb-10 lg:mb-12"
                 dangerouslySetInnerHTML={{ __html: service.content }}
               />
 
               {service.logos && service.logos.length > 0 && (
-                <div className="mt-16">
-                  <h3 className="text-xl font-bold mb-8 flex items-center gap-3">
-                    <div className="w-8 h-1 bg-brand-primary rounded-full" />
-                    Tecnologías y Marcas que implementamos
+                <div className="mt-12 lg:mt-16">
+                  <h3 className="text-lg lg:text-xl font-bold mb-6 lg:mb-8 flex items-center gap-3">
+                    <div className="w-6 lg:w-8 h-1 bg-brand-primary rounded-full" />
+                    Tecnologías y Marcas
                   </h3>
-                  <div className="glass-card p-8 rounded-3xl border-white/5 overflow-hidden relative">
+                  <div className="glass-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl border-white/5 overflow-hidden relative">
                     <div className="flex gap-12 items-center animate-marquee whitespace-nowrap py-4">
                       {[...service.logos, ...service.logos, ...service.logos].map((logo: string, i: number) => (
-                        <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 min-w-[100px] justify-center">
                           <img 
                             src={`/partners/${logo}`} 
                             alt={`Tecnología ${logo.split('.')[0]} - Inside Business Mexico`} 
                             className="h-10 lg:h-12 w-auto object-contain"
+                            loading="lazy"
                             onError={(e) => {
                               const target = e.target as HTMLImageElement;
+                              if (target.dataset.failed) return;
+                              target.dataset.failed = "true";
                               target.style.display = 'none';
                               const span = document.createElement('span');
-                              span.className = "font-display font-black text-lg lg:text-xl italic uppercase text-zinc-600";
+                              span.className = "font-display font-black text-lg lg:text-xl italic uppercase text-zinc-500/50";
                               span.innerText = logo.split('.')[0];
                               target.parentNode?.appendChild(span);
                             }}
@@ -368,14 +372,14 @@ const ServiceDetail = () => {
           </div>
 
           {/* Sidebar */}
-          <aside className="space-y-8">
+          <aside className="space-y-6 lg:space-y-8">
             <motion.div 
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
-              className="glass-card p-8 rounded-3xl border-white/10 sticky top-32 hover:bg-white/[0.05] transition-colors duration-500"
+              className="glass-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl border-white/10 lg:sticky lg:top-32 hover:bg-white/[0.05] transition-colors duration-500"
             >
-              <h3 className="text-xl font-bold mb-6 flex items-center gap-2">
+              <h3 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6 flex items-center gap-2">
                 <Zap className="text-brand-primary" size={20} />
                 Características Clave
               </h3>

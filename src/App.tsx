@@ -134,17 +134,19 @@ const PartnerCarousel = () => {
       </div>
       <div className="flex gap-12 items-center animate-marquee whitespace-nowrap py-4">
         {[...partners, ...partners, ...partners].map((partner, i) => (
-          <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+          <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 min-w-[100px] justify-center">
             <img 
               src={partner.logo} 
               alt={`Partner certificado ${partner.name} - Inside Business Mexico`} 
               className="h-8 lg:h-10 w-auto object-contain"
+              loading="lazy"
               onError={(e) => {
-                // Si la imagen no existe, mostramos el nombre como texto para que no quede vacío
                 const target = e.target as HTMLImageElement;
+                if (target.dataset.failed) return;
+                target.dataset.failed = "true";
                 target.style.display = 'none';
                 const span = document.createElement('span');
-                span.className = "font-display font-black text-lg lg:text-xl italic uppercase text-zinc-600";
+                span.className = "font-display font-black text-lg lg:text-xl italic uppercase text-zinc-500/50";
                 span.innerText = partner.name;
                 target.parentNode?.appendChild(span);
               }}
@@ -214,7 +216,7 @@ const Navbar = () => {
 
 const Hero = () => {
   return (
-    <section className="relative min-h-[40vh] lg:min-h-screen flex items-center pt-32 lg:pt-36 pb-12 lg:pb-0 overflow-hidden">
+    <section className="relative min-h-[40vh] lg:min-h-screen flex items-center pt-24 lg:pt-36 pb-12 lg:pb-0 overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full -z-10">
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brand-primary/10 rounded-full blur-[120px]" />
@@ -232,7 +234,7 @@ const Hero = () => {
             <Zap size={14} />
             Infraestructura TI de Próxima Generación
           </div>
-          <h1 className="text-2xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 lg:mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 lg:mb-6">
             Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad en Villahermosa y el Sureste de México.
           </h1>
           <p className="text-sm sm:text-lg text-zinc-400 mb-6 lg:mb-8 max-w-xl leading-relaxed">
@@ -407,9 +409,9 @@ const Services = () => {
   return (
     <section id="servicios" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">Servicios de TI <span className="text-gradient">Especializados</span> para Empresas en Tabasco</h2>
-          <p className="text-zinc-400 max-w-2xl mx-auto">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Servicios de TI <span className="text-gradient">Especializados</span> para Empresas en Tabasco</h2>
+          <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto">
             Cubrimos todo el espectro tecnológico de tu empresa con autoridad técnica y los más altos estándares de calidad en el sureste mexicano.
           </p>
         </div>
@@ -528,11 +530,11 @@ const AboutUs = () => {
               <Users size={14} />
               Sobre Nosotros
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-8">Expertos en <span className="text-brand-primary">Ciberseguridad</span> e Infraestructura TI en el Sureste de México</h2>
-            <p className="text-lg text-zinc-400 mb-6 leading-relaxed">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 lg:mb-8">Expertos en <span className="text-brand-primary">Ciberseguridad</span> e Infraestructura TI en el Sureste de México</h2>
+            <p className="text-base lg:text-lg text-zinc-400 mb-4 lg:mb-6 leading-relaxed">
               Inside Business Mexico nació en Villahermosa, Tabasco, con la misión de acercar infraestructura TI de clase mundial a empresas en crecimiento y grandes corporativos de todo el Sureste Mexicano.
             </p>
-            <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
+            <p className="text-base lg:text-lg text-zinc-400 mb-6 lg:mb-8 leading-relaxed">
               Con más de 15 años de experiencia, nuestro equipo de ingenieros certificados diseña soluciones de networking, ciberseguridad y soporte técnico que no solo resuelven problemas actuales, sino que blindan a su empresa para los retos del futuro. Somos el aliado estratégico en tecnología para negocios en Tabasco, Veracruz, Campeche y Chiapas.
             </p>
             
