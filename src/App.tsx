@@ -63,8 +63,8 @@ const StructuredData = () => {
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "2A Cda. de Marcelino Cabieces 407, Col. Pino Suarez",
-      "addressLocality": "Villahermosa",
-      "addressRegion": "Tabasco",
+      "addressLocality": "Sureste de México",
+      "addressRegion": "México",
       "postalCode": "86168",
       "addressCountry": "MX"
     },
@@ -138,7 +138,7 @@ const PartnerCarousel = () => {
             <img 
               src={partner.logo} 
               alt={`Partner certificado ${partner.name} - Inside Business Mexico`} 
-              className="h-8 lg:h-10 w-auto object-contain"
+              className="h-12 lg:h-16 w-auto object-contain"
               loading="lazy"
               onError={(e) => {
                 const target = e.target as HTMLImageElement;
@@ -195,10 +195,6 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-4">
-          <a href="https://wa.me/5215620013345" target="_blank" rel="noreferrer" className="hidden sm:flex items-center gap-2 text-brand-primary font-semibold text-sm">
-            <Phone size={16} />
-            <span>Diagnóstico Gratis</span>
-          </a>
           <a 
             href="/brochure-ib-mexico.pdf" 
             target="_blank" 
@@ -235,7 +231,7 @@ const Hero = () => {
             Infraestructura TI de Próxima Generación
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 lg:mb-6">
-            Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad en Villahermosa y el Sureste de México.
+            Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad en el sureste de México.
           </h1>
           <p className="text-sm sm:text-lg text-zinc-400 mb-6 lg:mb-8 max-w-xl leading-relaxed">
             Networking, Ciberseguridad y Soluciones de Cómputo Empresarial diseñadas para la era digital. Autoridad técnica y confianza para las empresas líderes en México.
@@ -245,7 +241,7 @@ const Hero = () => {
               onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary text-sm sm:text-lg px-5 sm:px-8 py-2.5 sm:py-4"
             >
-              Agendar Diagnóstico Gratuito
+              Agendar Diagnóstico
               <ChevronRight size={18} className="sm:w-5 sm:h-5" />
             </button>
             <button 
@@ -265,24 +261,24 @@ const Hero = () => {
           transition={{ duration: 1, delay: 0.2 }}
           className="relative hidden lg:block"
         >
-          <div className="relative z-10 glass-card rounded-3xl p-8 border-white/20 shadow-2xl overflow-hidden">
+          <div className="relative z-10 glass-card rounded-3xl p-5 border-white/20 shadow-2xl overflow-hidden mb-4">
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-primary to-brand-secondary" />
-            <div className="flex items-center justify-between mb-8">
+            <div className="flex items-center justify-between mb-4">
               <div className="flex gap-2">
-                <div className="w-3 h-3 rounded-full bg-brand-primary/50" />
-                <div className="w-3 h-3 rounded-full bg-zinc-500/50" />
-                <div className="w-3 h-3 rounded-full bg-zinc-500/50" />
+                <div className="w-2 h-2 rounded-full bg-brand-primary/50" />
+                <div className="w-2 h-2 rounded-full bg-zinc-500/50" />
+                <div className="w-2 h-2 rounded-full bg-zinc-500/50" />
               </div>
               <div className="text-[10px] font-mono text-zinc-500">NETWORK_STATUS: SECURE</div>
             </div>
             
-            <div className="space-y-6">
-              <div className="p-4 bg-white/5 rounded-xl border border-white/5">
+            <div className="space-y-3">
+              <div className="p-3 bg-white/5 rounded-xl border border-white/5">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-xs font-semibold text-zinc-400">Ciberseguridad Perimetral</span>
+                  <span className="text-[10px] font-semibold text-zinc-400">Ciberseguridad Perimetral</span>
                   <span className="text-[10px] text-brand-primary font-mono">ACTIVE</span>
                 </div>
-                <div className="h-2 w-full bg-zinc-800 rounded-full overflow-hidden">
+                <div className="h-1.5 w-full bg-zinc-800 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: '98%' }}
@@ -292,18 +288,39 @@ const Hero = () => {
                 </div>
               </div>
               
-              <div className="grid grid-cols-2 gap-4">
-                <div className="p-4 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
-                  <Shield className="text-brand-secondary mb-2" size={24} />
-                  <span className="text-xl font-bold">100%</span>
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">Protección</span>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
+                  <Shield className="text-brand-secondary mb-1" size={18} />
+                  <span className="text-lg font-bold">100%</span>
+                  <span className="text-[9px] text-zinc-500 uppercase tracking-tighter">Protección</span>
                 </div>
-                <div className="p-4 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
-                  <Network className="text-brand-primary mb-2" size={24} />
-                  <span className="text-xl font-bold">99.9%</span>
-                  <span className="text-[10px] text-zinc-500 uppercase tracking-tighter">Uptime</span>
+                <div className="p-3 bg-white/5 rounded-xl border border-white/5 flex flex-col items-center justify-center">
+                  <Network className="text-brand-primary mb-1" size={18} />
+                  <span className="text-lg font-bold">99.9%</span>
+                  <span className="text-[9px] text-zinc-500 uppercase tracking-tighter">Uptime</span>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="relative z-10 glass-card rounded-3xl p-4 border-white/20 shadow-2xl overflow-hidden h-[350px] lg:h-[450px]">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-brand-secondary to-brand-primary" />
+            <div className="flex items-center justify-between mb-2">
+              <div className="flex gap-2">
+                <div className="w-2 h-2 rounded-full bg-brand-primary/50" />
+                <div className="w-2 h-2 rounded-full bg-zinc-500/50" />
+                <div className="w-2 h-2 rounded-full bg-zinc-500/50" />
+              </div>
+              <div className="text-[10px] font-mono text-zinc-500">FORTIGUARD_THREAT_MAP</div>
+            </div>
+            
+            <div className="w-full h-[calc(100%-1.5rem)] rounded-xl overflow-hidden border border-white/5 bg-black">
+              <iframe 
+                src="https://threatmap.fortiguard.com/" 
+                title="FortiGuard Threat Map"
+                className="w-full h-full border-0"
+                sandbox="allow-scripts allow-same-origin"
+              />
             </div>
           </div>
           
@@ -359,44 +376,62 @@ const Services = () => {
     {
       title: 'Ciberseguridad Empresarial',
       slug: 'ciberseguridad-empresarial',
-      desc: 'Firewalls de próxima generación (NGFW), protección perimetral y auditorías de seguridad.',
+      desc: 'Firewalls de próxima generación (NGFW), protección perimetral, SASE y auditorías de seguridad.',
       icon: Shield,
     },
     {
       title: 'Comunicaciones Unificadas',
       slug: 'comunicaciones-unificadas',
-      desc: 'Sistemas de telefonía IP, videoconferencia y herramientas de colaboración en tiempo real.',
+      desc: 'Sistemas de telefonía IP, videoconferencia y herramientas de colaboración con enfoque en omnicanalidad.',
       icon: Headset,
     },
     {
-      title: 'Cómputo y Almacenamiento',
-      slug: 'computo-y-almacenamiento',
+      title: 'Cómputo Empresarial',
+      slug: 'computo-empresarial',
       desc: 'Servidores, almacenamiento empresarial y soluciones de virtualización a medida.',
       icon: Cpu,
     },
     {
-      title: 'Soporte Técnico y Help Desk',
-      slug: 'soporte-tecnico-y-help-desk',
-      desc: 'Soporte técnico especializado con metodología ITIL para la continuidad de su operación.',
-      icon: LifeBuoy,
+      title: 'Hiperconvergencia HCI',
+      slug: 'hiperconvergencia-hci',
+      desc: 'Infraestructura hiperconvergente para simplificar la gestión y escalar recursos de forma eficiente.',
+      icon: Cloud,
     },
     {
-      title: 'Desarrollo de Software y Cloud',
-      slug: 'desarrollo-software-y-cloud',
-      desc: 'Aplicaciones a la medida y soluciones en la nube (AWS, Azure, Google Cloud).',
+      title: 'Ingeniería de Software',
+      slug: 'ingenieria-de-software',
+      desc: 'Desarrollo de aplicaciones a la medida y soluciones de software empresarial.',
       icon: Code2,
     },
     {
-      title: 'Retail y Equipamiento',
-      slug: 'retail-y-equipamiento',
+      title: 'Cloud',
+      slug: 'cloud',
+      desc: 'Migración y gestión de infraestructura en la nube (AWS, Azure, Google Cloud).',
+      icon: Cloud,
+    },
+    {
+      title: 'Retail',
+      slug: 'retail',
       desc: 'Venta de laptops, desktops, impresoras y periféricos de las mejores marcas.',
       icon: ShoppingBag,
     },
     {
-      title: 'Financiamiento y Arrendamiento',
-      slug: 'financiamiento-y-arrendamiento',
+      title: 'Help desk y Service desk',
+      slug: 'help-desk-y-service-desk',
+      desc: 'Soporte técnico especializado con metodología ITIL para la continuidad de su operación.',
+      icon: LifeBuoy,
+    },
+    {
+      title: 'Financiamiento y Crédito Simple',
+      slug: 'financiamiento-y-credito-simple',
       desc: 'Soluciones financieras flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
       icon: CreditCard,
+    },
+    {
+      title: 'XAAS',
+      slug: 'xaas',
+      desc: 'Todo como Servicio: hardware, software e infraestructura bajo un modelo de suscripción.',
+      icon: Monitor,
     },
     {
       title: 'Infraestructura y Redes Empresariales',
@@ -410,7 +445,7 @@ const Services = () => {
     <section id="servicios" className="py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-12 lg:mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">Servicios de TI <span className="text-gradient">Especializados</span> para Empresas en Tabasco</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-4">Servicios de TI <span className="text-gradient">Especializados</span></h2>
           <p className="text-sm md:text-base text-zinc-400 max-w-2xl mx-auto">
             Cubrimos todo el espectro tecnológico de tu empresa con autoridad técnica y los más altos estándares de calidad en el sureste mexicano.
           </p>
@@ -468,9 +503,9 @@ const CybersecurityFocus = () => {
               </div>
               <div className="space-y-4 pt-8">
                 <div className="glass-card p-6 rounded-2xl">
-                  <Zap className="text-yellow-500 mb-4" size={32} />
-                  <h4 className="font-bold mb-2">Respuesta Rápida</h4>
-                  <p className="text-xs text-zinc-500">Detección y mitigación de amenazas en tiempo real.</p>
+                  <Cloud className="text-brand-primary mb-4" size={32} />
+                  <h4 className="font-bold mb-2">SASE</h4>
+                  <p className="text-xs text-zinc-500">Secure Access Service Edge para proteger usuarios en cualquier lugar.</p>
                 </div>
                 <div className="glass-card p-6 rounded-2xl border-brand-secondary/20">
                   <BarChart3 className="text-brand-secondary mb-4" size={32} />
@@ -530,12 +565,12 @@ const AboutUs = () => {
               <Users size={14} />
               Sobre Nosotros
             </div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 lg:mb-8">Expertos en <span className="text-brand-primary">Ciberseguridad</span> e Infraestructura TI en el Sureste de México</h2>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 lg:mb-8">Liderando la <span className="text-brand-primary">Innovación Tecnológica</span> en el Sureste de México</h2>
             <p className="text-base lg:text-lg text-zinc-400 mb-4 lg:mb-6 leading-relaxed">
-              Inside Business Mexico nació en Villahermosa, Tabasco, con la misión de acercar infraestructura TI de clase mundial a empresas en crecimiento y grandes corporativos de todo el Sureste Mexicano.
+              Inside Business Mexico nació con la misión de acercar infraestructura TI de clase mundial a empresas en crecimiento y grandes corporativos de todo el sureste de México.
             </p>
             <p className="text-base lg:text-lg text-zinc-400 mb-6 lg:mb-8 leading-relaxed">
-              Con más de 15 años de experiencia, nuestro equipo de ingenieros certificados diseña soluciones de networking, ciberseguridad y soporte técnico que no solo resuelven problemas actuales, sino que blindan a su empresa para los retos del futuro. Somos el aliado estratégico en tecnología para negocios en Tabasco, Veracruz, Campeche y Chiapas.
+              Con más de 15 años de experiencia, nuestro equipo de ingenieros certificados diseña soluciones de networking, ciberseguridad y soporte técnico que no solo resuelven problemas actuales, sino que blindan a su empresa para los retos del futuro. Somos el aliado estratégico en tecnología para negocios en el sureste de México.
             </p>
             
             <div className="grid sm:grid-cols-2 gap-6">
@@ -576,6 +611,15 @@ const AboutUs = () => {
 };
 
 const ContactForm = () => {
+  const location = useLocation();
+  const [selectedService, setSelectedService] = useState('Infraestructura y Redes Empresariales');
+
+  useEffect(() => {
+    if (location.state && location.state.selectedService) {
+      setSelectedService(location.state.selectedService);
+    }
+  }, [location.state]);
+
   return (
     <section id="contacto" className="py-16 lg:py-24 relative">
       <div className="max-w-7xl mx-auto px-6">
@@ -585,7 +629,7 @@ const ContactForm = () => {
               <div className="relative z-10">
                 <h2 className="text-3xl lg:text-4xl font-bold mb-6">¿Listo para modernizar tu infraestructura?</h2>
                 <p className="text-zinc-300 mb-12 text-base lg:text-lg">
-                  Déjanos tus datos y un consultor experto se pondrá en contacto contigo para agendar un diagnóstico gratuito.
+                  Déjanos tus datos y un consultor experto se pondrá en contacto contigo para agendar un diagnóstico.
                 </p>
                 
                 <div className="space-y-6 lg:space-y-8">
@@ -605,15 +649,6 @@ const ContactForm = () => {
                     <div>
                       <div className="font-bold text-sm lg:text-base">Teléfono</div>
                       <div className="text-zinc-400 text-sm lg:text-base">993 310 0951</div>
-                    </div>
-                  </div>
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-white/10 flex items-center justify-center text-brand-primary shrink-0">
-                      <MapPin size={20} className="lg:w-6 lg:h-6" />
-                    </div>
-                    <div>
-                      <div className="font-bold text-sm lg:text-base">Ubicación</div>
-                      <div className="text-zinc-400 text-sm lg:text-base">2A Cda. de Marcelino Cabieces 407, Col. Pino Suarez, 86168 Villahermosa, Tab.</div>
                     </div>
                   </div>
                 </div>
@@ -665,16 +700,23 @@ const ContactForm = () => {
                 
                 <div className="space-y-2">
                   <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Servicio de Interés</label>
-                  <select className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base">
-                    <option className="bg-brand-dark">Networking Empresarial</option>
-                    <option className="bg-brand-dark">Ciberseguridad Avanzada</option>
-                    <option className="bg-brand-dark">Comunicaciones Unificadas</option>
-                    <option className="bg-brand-dark">Help desk y Service desk</option>
-                    <option className="bg-brand-dark">Desarrollo de Software y Cloud</option>
-                    <option className="bg-brand-dark">Retail / Punto de Venta</option>
-                    <option className="bg-brand-dark">Financiamiento / Arrendamiento</option>
-                    <option className="bg-brand-dark">Licenciamiento Software</option>
-                    <option className="bg-brand-dark">Otro</option>
+                  <select 
+                    value={selectedService}
+                    onChange={(e) => setSelectedService(e.target.value)}
+                    className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base"
+                  >
+                    <option value="Infraestructura y Redes Empresariales" className="bg-brand-dark">Networking Empresarial</option>
+                    <option value="Ciberseguridad y Auditoría de Redes" className="bg-brand-dark">Ciberseguridad Avanzada</option>
+                    <option value="Comunicaciones Unificadas y Telefonía IP" className="bg-brand-dark">Comunicaciones Unificadas</option>
+                    <option value="Cómputo Empresarial" className="bg-brand-dark">Cómputo Empresarial</option>
+                    <option value="Hiperconvergencia HCI" className="bg-brand-dark">Hiperconvergencia HCI</option>
+                    <option value="Ingeniería de Software" className="bg-brand-dark">Ingeniería de Software</option>
+                    <option value="Soluciones Cloud" className="bg-brand-dark">Cloud</option>
+                    <option value="Retail" className="bg-brand-dark">Retail</option>
+                    <option value="Help Desk y Service Desk" className="bg-brand-dark">Help desk y Service desk</option>
+                    <option value="Financiamiento y Crédito Simple" className="bg-brand-dark">Financiamiento y Crédito Simple</option>
+                    <option value="XAAS (Everything as a Service)" className="bg-brand-dark">XAAS</option>
+                    <option value="Otro" className="bg-brand-dark">Otro</option>
                   </select>
                 </div>
                 
@@ -707,7 +749,7 @@ const Footer = () => {
   return (
     <footer className="bg-brand-dark pt-20 pb-10 border-t border-white/5">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12 mb-16">
+        <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
               <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
@@ -742,23 +784,11 @@ const Footer = () => {
             <ul className="space-y-4 text-sm text-zinc-500">
               <li><Link to="/servicios/networking-y-conectividad" className="hover:text-brand-primary transition-colors">Networking</Link></li>
               <li><Link to="/servicios/ciberseguridad-empresarial" className="hover:text-brand-primary transition-colors">Ciberseguridad</Link></li>
-              <li><Link to="/servicios/soporte-tecnico-y-help-desk" className="hover:text-brand-primary transition-colors">Soporte Técnico</Link></li>
+              <li><Link to="/servicios/help-desk-y-service-desk" className="hover:text-brand-primary transition-colors">Help desk y Service desk</Link></li>
               <li><Link to="/servicios/comunicaciones-unificadas" className="hover:text-brand-primary transition-colors">Comunicaciones unificadas</Link></li>
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Áreas de Servicio</h4>
-            <ul className="space-y-4 text-sm text-zinc-500">
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Tabasco</span></li>
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Sur de Veracruz</span></li>
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Chiapas</span></li>
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Campeche</span></li>
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Mérida</span></li>
-              <li><span className="hover:text-brand-primary transition-colors cursor-default">Cancún</span></li>
-            </ul>
-          </div>
-          
           <div>
             <h4 className="font-bold mb-6 uppercase text-xs tracking-widest text-zinc-400">Soporte Remoto</h4>
             <p className="text-zinc-500 text-sm mb-4">Accede a asistencia técnica inmediata a través de TeamViewer.</p>
@@ -821,8 +851,8 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Ciberseguridad e Infraestructura TI en Villahermosa | IB México</title>
-        <meta name="description" content="Expertos en infraestructura TI y ciberseguridad en Villahermosa y el Sureste de México. Ofrecemos soporte técnico en Tabasco, redes empresariales y soluciones tecnológicas." />
+        <title>Ciberseguridad e Infraestructura TI en el Sureste de México | IB México</title>
+        <meta name="description" content="Expertos en infraestructura TI y ciberseguridad en el sureste de México. Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas." />
       </Helmet>
       <Hero />
       <Stats />
