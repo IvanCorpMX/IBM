@@ -200,7 +200,7 @@ const servicesData: Record<string, any> = {
   'ingenieria-de-software': {
     title: 'Ingeniería de Software',
     icon: Code2,
-    logos: ['mysql.png', 'java.png', 'php.png', 'html.png', 'css.png', 'js.png'],
+    logos: ['mysql.png', 'java.png', 'php.png', 'css.png', 'js.png'],
     description: 'Desarrollo de aplicaciones a medida y soluciones de software empresarial.',
     content: `
       <p>La tecnología debe adaptarse a su negocio, no al revés. En Inside Business Mexico, creamos soluciones de software personalizadas que impulsan la innovación y la eficiencia operativa de las empresas en el sureste de México.</p>
