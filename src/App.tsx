@@ -36,7 +36,8 @@ import {
   Instagram,
   Linkedin,
   Twitter,
-  Monitor
+  Monitor,
+  Calendar
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -335,31 +336,67 @@ const Hero = () => {
 
 const Stats = () => {
   const stats = [
-    { label: 'Proyectos Exitosos', value: '500+', icon: CheckCircle2 },
     { label: 'Años de Experiencia', value: '15+', icon: Zap },
-    { label: 'Soporte 24/7', value: '100%', icon: Shield },
-    { label: 'Clientes Corporativos', value: '200+', icon: Users },
+    { label: 'Soporte 24/7', value: '100%', icon: Headset },
   ];
 
   return (
     <section className="py-20 border-y border-white/5 bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8">
-        {stats.map((stat, i) => (
-          <motion.div 
-            key={i}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-5 gap-12 items-center">
+          {/* Stats - 2 columns */}
+          <div className="lg:col-span-2 grid grid-cols-2 gap-8">
+            {stats.map((stat, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="text-center flex flex-col items-center justify-center"
+              >
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 mb-6 text-brand-primary border border-white/10 shadow-lg">
+                  <stat.icon size={32} />
+                </div>
+                <div className="text-4xl font-bold mb-2">{stat.value}</div>
+                <div className="text-xs text-zinc-500 uppercase tracking-widest font-semibold">{stat.label}</div>
+              </motion.div>
+            ))}
+          </div>
+          
+          {/* ISO 27001 Card - 3 columns */}
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: i * 0.1 }}
-            className="text-center"
+            transition={{ delay: 0.2 }}
+            className="lg:col-span-3"
           >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 mb-4 text-brand-primary">
-              <stat.icon size={24} />
+            <div className="glass-card p-8 lg:p-10 rounded-3xl border-white/10 flex flex-col sm:flex-row items-center sm:items-start gap-8 relative overflow-hidden group hover:bg-white/[0.05] transition-colors duration-500">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-150" />
+              
+              <div className="bg-white p-5 rounded-2xl shadow-2xl flex items-center justify-center w-32 h-32 shrink-0 z-10 ring-1 ring-white/20">
+                <img 
+                  src="/iso27001.png" 
+                  alt="Certificación ISO 27001" 
+                  className="w-full h-full object-contain"
+                  referrerPolicy="no-referrer"
+                />
+              </div>
+              
+              <div className="text-center sm:text-left z-10">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] font-bold uppercase tracking-widest mb-4">
+                  <Shield size={14} />
+                  Seguridad de la Información
+                </div>
+                <h3 className="text-2xl font-bold mb-3 text-white">Certificación ISO 27001</h3>
+                <p className="text-zinc-400 text-sm leading-relaxed">
+                  Operamos bajo los más estrictos estándares internacionales. Nuestra certificación <strong>ISO 27001</strong> garantiza la confidencialidad, integridad y disponibilidad de su información. Protegemos sus datos empresariales contra ciberamenazas, asegurando el cumplimiento normativo y brindando la tranquilidad que su negocio necesita para crecer de forma segura.
+                </p>
+              </div>
             </div>
-            <div className="text-3xl font-bold mb-1">{stat.value}</div>
-            <div className="text-xs text-zinc-500 uppercase tracking-widest font-semibold">{stat.label}</div>
           </motion.div>
-        ))}
+        </div>
       </div>
     </section>
   );
@@ -613,6 +650,7 @@ const AboutUs = () => {
 const ContactForm = () => {
   const location = useLocation();
   const [selectedService, setSelectedService] = useState('Infraestructura y Redes Empresariales');
+  const [showIframe, setShowIframe] = useState(false);
 
   useEffect(() => {
     if (location.state && location.state.selectedService) {
@@ -658,85 +696,45 @@ const ContactForm = () => {
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/20 rounded-full blur-[100px] -mr-32 -mt-32" />
             </div>
             
-            <div className="p-8 lg:p-16 bg-brand-surface">
-              <form className="space-y-4 lg:space-y-6">
-                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Nombre Completo</label>
-                    <input 
-                      type="text" 
-                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
-                      placeholder="Ej. Juan Pérez"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Empresa</label>
-                    <input 
-                      type="text" 
-                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
-                      placeholder="Nombre de tu empresa"
-                    />
-                  </div>
+            <div className="p-6 lg:p-12 bg-brand-surface/80 flex flex-col items-center justify-center relative border-l border-white/5">
+              <div className="w-full h-full flex flex-col max-w-2xl mx-auto">
+                <div className="mb-8 text-center lg:text-left">
+                  <h3 className="text-2xl font-bold text-white mb-3 flex items-center justify-center lg:justify-start gap-3">
+                    <Calendar className="text-brand-primary" size={24} />
+                    Agenda tu sesión
+                  </h3>
+                  <p className="text-sm text-zinc-400">Selecciona el día y la hora que mejor se adapte a tu equipo para recibir un diagnóstico personalizado.</p>
                 </div>
                 
-                <div className="grid sm:grid-cols-2 gap-4 lg:gap-6">
-                  <div className="space-y-2">
-                    <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Correo Corporativo</label>
-                    <input 
-                      type="email" 
-                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
-                      placeholder="juan@empresa.com"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Teléfono</label>
-                    <input 
-                      type="tel" 
-                      className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors text-sm lg:text-base"
-                      placeholder="993 310 0951"
-                    />
-                  </div>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Servicio de Interés</label>
-                  <select 
-                    value={selectedService}
-                    onChange={(e) => setSelectedService(e.target.value)}
-                    className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors appearance-none text-sm lg:text-base"
-                  >
-                    <option value="Infraestructura y Redes Empresariales" className="bg-brand-dark">Networking Empresarial</option>
-                    <option value="Ciberseguridad y Auditoría de Redes" className="bg-brand-dark">Ciberseguridad Avanzada</option>
-                    <option value="Comunicaciones Unificadas y Telefonía IP" className="bg-brand-dark">Comunicaciones Unificadas</option>
-                    <option value="Cómputo Empresarial" className="bg-brand-dark">Cómputo Empresarial</option>
-                    <option value="Hiperconvergencia HCI" className="bg-brand-dark">Hiperconvergencia HCI</option>
-                    <option value="Ingeniería de Software" className="bg-brand-dark">Ingeniería de Software</option>
-                    <option value="Soluciones Cloud" className="bg-brand-dark">Cloud</option>
-                    <option value="Retail" className="bg-brand-dark">Retail</option>
-                    <option value="Help Desk y Service Desk" className="bg-brand-dark">Help desk y Service desk</option>
-                    <option value="Financiamiento y Crédito Simple" className="bg-brand-dark">Financiamiento y Crédito Simple</option>
-                    <option value="XAAS (Everything as a Service)" className="bg-brand-dark">XAAS</option>
-                    <option value="Otro" className="bg-brand-dark">Otro</option>
-                  </select>
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-[10px] lg:text-xs font-bold uppercase tracking-widest text-zinc-500">Mensaje</label>
-                  <textarea 
-                    rows={3}
-                    className="w-full bg-white/5 border border-white/10 backdrop-blur-sm rounded-lg px-4 py-2.5 lg:py-3 focus:outline-none focus:border-brand-primary transition-colors resize-none text-sm lg:text-base"
-                    placeholder="Cuéntanos sobre tu proyecto..."
-                  />
-                </div>
-                
-                <button className="btn-primary w-full py-3.5 lg:py-4 text-base lg:text-lg">
-                  Enviar Solicitud
-                </button>
-                
-                <p className="text-[9px] lg:text-[10px] text-zinc-500 text-center">
-                  Al enviar este formulario, aceptas nuestra política de privacidad y tratamiento de datos personales.
-                </p>
-              </form>
+                <motion.div 
+                  className="flex-1 w-full bg-white rounded-2xl overflow-hidden shadow-2xl ring-1 ring-white/10 min-h-[650px]"
+                  onViewportEnter={() => setShowIframe(true)}
+                  viewport={{ once: true, margin: "200px" }}
+                >
+                  {showIframe ? (
+                    /* 
+                      ========================================================================
+                      PARA CAMBIAR LA URL DE BOOKINGS EN EL FUTURO:
+                      Cambia el valor del atributo "src" en la etiqueta <iframe> de abajo.
+                      ========================================================================
+                    */
+                    <iframe 
+                      src="https://outlook.office.com/bookwithme/user/d60d482122d6426d8e38f7285ba9b2a7@corp-mx.com?anonymous&ep=plink" 
+                      width="100%" 
+                      height="100%" 
+                      style={{ border: 0, minHeight: '650px' }} 
+                      allowFullScreen
+                      loading="lazy"
+                      title="Agenda una reunión"
+                    ></iframe>
+                  ) : (
+                    <div className="w-full h-full min-h-[650px] flex flex-col items-center justify-center bg-zinc-50/50">
+                      <div className="w-8 h-8 border-4 border-brand-primary border-t-transparent rounded-full animate-spin mb-4"></div>
+                      <p className="text-zinc-500 text-sm font-medium">Cargando calendario...</p>
+                    </div>
+                  )}
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>
