@@ -375,7 +375,7 @@ const Stats = () => {
             <div className="glass-card p-8 lg:p-10 rounded-3xl border-white/10 flex flex-col sm:flex-row items-center sm:items-start gap-8 relative overflow-hidden group hover:bg-white/[0.05] transition-colors duration-500">
               <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-150" />
               
-              <div className="bg-white p-5 rounded-2xl shadow-2xl flex items-center justify-center w-32 h-32 shrink-0 z-10 ring-1 ring-white/20">
+              <div className="bg-white p-5 rounded-2xl shadow-2xl flex items-center justify-center w-56 sm:w-64 h-28 sm:h-32 shrink-0 z-10 ring-1 ring-white/20">
                 <img 
                   src="/iso27001.png" 
                   alt="Certificación ISO 27001" 
