@@ -28,21 +28,13 @@ const servicesData: Record<string, any> = {
     logos: ['ubiquiti.png', 'aruba.png', 'grandstream.png'],
     description: 'Diseño e implementación de redes LAN, switching y cableado estructurado de alto rendimiento en el sureste de México.',
     content: `
-      <p>En la era digital actual, una red robusta y confiable es la columna vertebral de cualquier operación empresarial exitosa. En Inside Business Mexico, nos especializamos en el diseño, implementación y gestión de infraestructuras de networking que garantizan el máximo rendimiento y disponibilidad para su negocio en todo el sureste de México.</p>
+      <p>Diseñamos, implementamos y gestionamos infraestructuras de networking que garantizan el máximo rendimiento y disponibilidad para su negocio.</p>
       
-      <h3>Infraestructura de Red de Clase Mundial</h3>
-      <p>Nuestras soluciones de networking empresarial van más allá de la simple conexión de dispositivos. Analizamos las necesidades específicas de su organización para crear arquitecturas de red escalables que soporten el crecimiento futuro. Trabajamos con los fabricantes líderes de la industria como Cisco, Aruba y Fortinet para entregar soluciones de switching, routing y wireless de última generación.</p>
+      <h3>Infraestructura de Red y Cableado</h3>
+      <p>Creamos arquitecturas escalables con equipos de última generación. Realizamos instalaciones de cableado estructurado y fibra óptica bajo estrictos estándares internacionales (TIA/EIA).</p>
       
-      <h3>Cableado Estructurado y Fibra Óptica</h3>
-      <p>La base física de su red es crítica. Realizamos instalaciones de cableado estructurado siguiendo los más estrictos estándares internacionales (TIA/EIA). Ya sea que necesite una actualización a Categoría 6A para soportar 10Gbps o la implementación de dorsales de fibra óptica monomodo o multimodo para conectar edificios, nuestro equipo técnico certificado garantiza una instalación impecable y certificada.</p>
-      
-      <h3>Soluciones Wireless de Alta Densidad</h3>
-      <p>Con el aumento de dispositivos móviles y el Internet de las Cosas (IoT), una red Wi-Fi empresarial debe ser capaz de manejar alta densidad de usuarios sin comprometer la velocidad ni la seguridad. Implementamos soluciones de Wi-Fi 6 y Wi-Fi 6E con gestión centralizada en la nube, permitiendo un control total sobre quién accede a su red y qué recursos utiliza.</p>
-      
-      <h3>Optimización y Monitoreo</h3>
-      <p>No solo instalamos su red; nos aseguramos de que funcione de manera óptima. Ofrecemos servicios de análisis de tráfico, optimización de ancho de banda y monitoreo proactivo 24/7. Esto nos permite identificar y resolver cuellos de botella antes de que afecten la productividad de sus colaboradores.</p>
-      
-      <p>Ubicados estratégicamente en el sureste de México, brindamos soporte técnico presencial rápido a empresas en toda la región, asegurando que su conectividad nunca sea un impedimento para el éxito de su empresa.</p>
+      <h3>Wireless y Optimización</h3>
+      <p>Implementamos soluciones Wi-Fi 6/6E de alta densidad con gestión centralizada. Además, ofrecemos monitoreo proactivo 24/7 para resolver cuellos de botella antes de que afecten su productividad.</p>
     `,
     features: [
       'Certificación de cableado estructurado Cat 6, 6A y 7',
@@ -58,24 +50,13 @@ const servicesData: Record<string, any> = {
     logos: ['hllstone.png', 'fortinet.png', 'sophos.png', 'endpoint.png', 'eset.png', 'kaspersky.png', 'sangfor.png', 'bitdefender.png'],
     description: 'Protección avanzada contra amenazas digitales, firewalls de próxima generación, SASE y auditorías de seguridad en el sureste de México.',
     content: `
-      <p>La ciberseguridad ya no es una opción, es una necesidad crítica para la supervivencia de cualquier empresa en el entorno digital actual. En Inside Business Mexico, ofrecemos soluciones de ciberseguridad integral diseñadas para proteger los activos más valiosos de su organización contra ataques sofisticados de ransomware, phishing y malware en toda la región del sureste de México.</p>
+      <p>Ofrecemos soluciones de ciberseguridad integral para proteger los activos de su organización contra ataques de ransomware, phishing y malware.</p>
       
-      <h3>Arquitectura SASE (Secure Access Service Edge)</h3>
-      <p>Destacamos en la implementación de arquitecturas SASE, unificando las capacidades de red y seguridad en la nube para proporcionar un acceso seguro y rápido a los usuarios, sin importar dónde se encuentren. SASE es el futuro de la seguridad perimetral para fuerzas de trabajo distribuidas.</p>
-
-      <h3>Protección Perimetral con NGFW</h3>
-      <p>Implementamos Firewalls de Próxima Generación (NGFW) que ofrecen una visibilidad completa del tráfico de red y un control granular sobre las aplicaciones. Nuestras soluciones de Fortinet y Palo Alto integran prevención de intrusiones (IPS), antivirus de red y filtrado web avanzado para detener las amenazas antes de que ingresen a su infraestructura local.</p>
+      <h3>Protección Perimetral y SASE</h3>
+      <p>Implementamos Firewalls de Próxima Generación (NGFW) y arquitecturas SASE para unificar red y seguridad en la nube, garantizando un acceso seguro desde cualquier lugar.</p>
       
-      <h3>Auditoría de Redes y Análisis de Vulnerabilidades</h3>
-      <p>¿Sabe qué tan vulnerable es su red hoy mismo? Realizamos auditorías de seguridad exhaustivas y escaneos de vulnerabilidades para identificar puntos débiles en sus sistemas, servidores y aplicaciones. Entregamos informes detallados con recomendaciones claras y priorizadas para mitigar riesgos, ayudando a su empresa en el sureste de México a cumplir con normativas internacionales de seguridad.</p>
-      
-      <h3>Seguridad en el Endpoint y EDR</h3>
-      <p>Con el trabajo remoto, el perímetro de seguridad se ha extendido hasta los dispositivos de los usuarios. Nuestras soluciones de Detección y Respuesta en el Endpoint (EDR) utilizan inteligencia artificial para detectar comportamientos anómalos y bloquear ataques de día cero que los antivirus tradicionales no pueden ver.</p>
-      
-      <h3>Estrategia de Zero Trust</h3>
-      <p>Ayudamos a las empresas a adoptar un modelo de "Confianza Cero", donde cada intento de acceso a los recursos corporativos debe ser verificado, independientemente de si proviene de dentro o fuera de la red. Esto minimiza drásticamente la superficie de ataque y protege contra amenazas internas.</p>
-      
-      <p>Como expertos en ciberseguridad en el sureste de México, entendemos los retos específicos de las industrias locales, brindando la tranquilidad necesaria para que su negocio opere sin interrupciones.</p>
+      <h3>Auditorías y Endpoint (EDR)</h3>
+      <p>Realizamos escaneos de vulnerabilidades para identificar puntos débiles. Protegemos los dispositivos de los usuarios con soluciones EDR basadas en inteligencia artificial para bloquear ataques de día cero bajo un modelo Zero Trust.</p>
     `,
     features: [
       'Implementación de Arquitectura SASE',
@@ -91,22 +72,13 @@ const servicesData: Record<string, any> = {
     logos: ['grandstream.png', 'teams.png', 'zoom.png'],
     description: 'Sistemas de colaboración, videoconferencia y telefonía IP con enfoque en omnicanalidad para empresas en el sureste de México.',
     content: `
-      <p>La comunicación efectiva es el motor de la colaboración empresarial. En Inside Business Mexico, integramos voz, video, mensajería y presencia en una sola plataforma coherente que permite a su equipo trabajar de manera más inteligente, no más dura, desde cualquier lugar del sureste mexicano.</p>
+      <p>Integramos voz, video, mensajería y presencia en una sola plataforma para que su equipo trabaje de manera más inteligente desde cualquier lugar.</p>
       
-      <h3>Omnicanalidad en la Atención al Cliente</h3>
-      <p>Destacamos la omnicanalidad como pilar fundamental. Unificamos todos los canales de contacto (voz, chat, redes sociales, email) en una sola interfaz, permitiendo a sus agentes brindar una experiencia de cliente fluida y sin interrupciones, mejorando la satisfacción y los tiempos de respuesta.</p>
-
-      <h3>Telefonía IP de Siguiente Generación</h3>
-      <p>Migre su antigua central telefónica a una solución de Voz sobre IP (VoIP) flexible y económica. Nuestras soluciones basadas en IP-PBX permiten una escalabilidad ilimitada, integración con dispositivos móviles y funciones avanzadas como operadora automática, grabación de llamadas y conferencias integradas, ideales para oficinas y sucursales en todo el sureste de México.</p>
+      <h3>Telefonía IP y Omnicanalidad</h3>
+      <p>Migre a soluciones VoIP flexibles y unifique todos sus canales de contacto (voz, chat, redes sociales) en una sola interfaz para mejorar la atención al cliente.</p>
       
-      <h3>Salas de Videoconferencia Profesionales</h3>
-      <p>En el mundo del trabajo híbrido, las reuniones virtuales deben ser tan claras y efectivas como las presenciales. Diseñamos e instalamos sistemas de videoconferencia profesional para salas de juntas de todos los tamaños, utilizando tecnología de audio y video de alta definición que se integra perfectamente con Microsoft Teams, Zoom y Webex.</p>
-      
-      <h3>Colaboración en Tiempo Real</h3>
-      <p>Facilitamos la adopción de herramientas de colaboración que permiten a sus empleados compartir documentos, chatear y realizar llamadas de video con un solo clic. Esto reduce la dependencia del correo electrónico y acelera la toma de decisiones en su organización.</p>
-      
-      <h3>Soporte y Mantenimiento</h3>
-      <p>Un sistema de comunicación caído es una pérdida de oportunidades. Ofrecemos planes de mantenimiento preventivo y correctivo para asegurar que sus sistemas de comunicación siempre estén operativos. Nuestro equipo técnico está listo para atender cualquier incidencia de forma remota o presencial en todo el sureste de México.</p>
+      <h3>Videoconferencia y Colaboración</h3>
+      <p>Diseñamos salas de videoconferencia profesionales integradas con Teams, Zoom y Webex. Facilitamos la colaboración en tiempo real con soporte técnico preventivo y correctivo.</p>
     `,
     features: [
       'Estrategias de Omnicanalidad integradas',
@@ -122,19 +94,13 @@ const servicesData: Record<string, any> = {
     logos: ['dell.png', 'synology.png', 'lenovo.png', 'hewlett.png'],
     description: 'Infraestructura de servidores, almacenamiento SAN/NAS y virtualización para empresas en el sureste de México.',
     content: `
-      <p>El procesamiento y almacenamiento de datos son el corazón de su infraestructura tecnológica. En Inside Business Mexico, proveemos soluciones de hardware empresarial de alto rendimiento que garantizan la integridad, disponibilidad y velocidad de acceso a su información crítica en todo el sureste de México.</p>
+      <p>Proveemos soluciones de hardware empresarial de alto rendimiento que garantizan la integridad, disponibilidad y velocidad de acceso a su información crítica.</p>
       
-      <h3>Servidores Empresariales de Alto Rendimiento</h3>
-      <p>Ofrecemos una amplia gama de servidores de rack y torre de los principales fabricantes como Dell Technologies, HPE y Lenovo. Ya sea que necesite un servidor de archivos básico o un clúster de servidores de alta densidad para aplicaciones críticas, diseñamos la configuración exacta que su negocio requiere.</p>
+      <h3>Servidores y Almacenamiento</h3>
+      <p>Ofrecemos servidores de rack y torre de marcas líderes, junto con sistemas de almacenamiento NAS y SAN optimizados con deduplicación y compresión de datos.</p>
       
-      <h3>Almacenamiento SAN y NAS</h3>
-      <p>La explosión de datos requiere soluciones de almacenamiento inteligentes. Implementamos sistemas de almacenamiento conectado a red (NAS) para compartir archivos de manera eficiente y redes de área de almacenamiento (SAN) para aplicaciones que demandan baja latencia y alta disponibilidad. Nuestras soluciones incluyen tecnologías de deduplicación y compresión para maximizar su inversión.</p>
-      
-      <h3>Virtualización de Servidores</h3>
-      <p>Optimice sus costos de hardware y energía mediante la virtualización. Somos expertos en la implementación de entornos virtuales con VMware vSphere y Microsoft Hyper-V, permitiéndole ejecutar múltiples servidores virtuales en un solo equipo físico, facilitando la administración y mejorando los tiempos de recuperación ante desastres.</p>
-      
-      <h3>Continuidad del Negocio y Respaldo</h3>
-      <p>Protegemos su operación contra fallos de hardware. Diseñamos estrategias de respaldo 3-2-1 (tres copias, dos medios distintos, una fuera de sitio) para asegurar que sus datos siempre sean recuperables. Ofrecemos soluciones de respaldo inmutable para protegerse contra el borrado accidental o ataques de ransomware.</p>
+      <h3>Virtualización y Respaldo</h3>
+      <p>Implementamos entornos virtuales (VMware, Hyper-V) para reducir costos operativos. Diseñamos estrategias de respaldo 3-2-1 y almacenamiento inmutable contra ransomware.</p>
     `,
     features: [
       'Venta y configuración de servidores Dell y HP',
@@ -150,16 +116,13 @@ const servicesData: Record<string, any> = {
     logos: ['nutanix.png', 'vmware.png', 'hyperv.png'],
     description: 'Infraestructura hiperconvergente para simplificar la gestión y escalar recursos de forma eficiente.',
     content: `
-      <p>La Hiperconvergencia (HCI) transforma la complejidad del centro de datos tradicional en una solución ágil y fácil de administrar. En Inside Business Mexico, implementamos plataformas HCI que combinan cómputo, almacenamiento y redes en un solo sistema definido por software.</p>
+      <p>Implementamos plataformas HCI que combinan cómputo, almacenamiento y redes en un solo sistema definido por software, eliminando la complejidad del centro de datos tradicional.</p>
       
-      <h3>Simplicidad y Escalabilidad</h3>
-      <p>Con HCI, olvídese de administrar silos separados de servidores y almacenamiento SAN. Todo se gestiona desde una única interfaz intuitiva. Además, escalar su infraestructura es tan sencillo como añadir un nuevo nodo al clúster, sin interrupciones ni configuraciones complejas.</p>
+      <h3>Simplicidad y Rendimiento</h3>
+      <p>Gestione todo desde una única interfaz y escale añadiendo nodos sin interrupciones. Ideal para bases de datos, VDI y aplicaciones críticas con alta disponibilidad integrada.</p>
       
-      <h3>Rendimiento y Alta Disponibilidad</h3>
-      <p>Las soluciones hiperconvergentes están diseñadas para ofrecer un rendimiento excepcional para bases de datos, VDI (Virtual Desktop Infrastructure) y aplicaciones críticas. La redundancia integrada asegura que, en caso de fallo de hardware, sus aplicaciones sigan funcionando sin tiempo de inactividad.</p>
-      
-      <h3>Reducción de Costos (TCO)</h3>
-      <p>Al consolidar el hardware y simplificar la gestión, la hiperconvergencia reduce significativamente los costos operativos y de capital, optimizando el espacio en el rack y el consumo de energía.</p>
+      <h3>Reducción de Costos</h3>
+      <p>Consolide su hardware para reducir significativamente los costos operativos (OPEX) y de capital, optimizando espacio y energía.</p>
     `,
     features: [
       'Implementación de clústeres hiperconvergentes',
@@ -175,19 +138,13 @@ const servicesData: Record<string, any> = {
     logos: ['prtg.png', 'teamviewer.png'],
     description: 'Servicios de soporte técnico especializado, mesa de ayuda y mantenimiento preventivo en el sureste de México.',
     content: `
-      <p>La continuidad operativa de su empresa depende de un soporte técnico ágil y profesional. En Inside Business Mexico, ofrecemos servicios de Help Desk y Service Desk diseñados para resolver incidencias de forma rápida y eficiente, permitiendo que su equipo se enfoque en lo que realmente importa: su negocio en todo el sureste de México.</p>
+      <p>Ofrecemos servicios de Help Desk y Service Desk diseñados para resolver incidencias de forma rápida y eficiente, asegurando la continuidad operativa de su empresa.</p>
       
-      <h3>Mesa de Ayuda Basada en ITIL</h3>
-      <p>Nuestros servicios de mesa de ayuda siguen las mejores prácticas de ITIL (Information Technology Infrastructure Library). Esto garantiza un proceso estandarizado para la recepción, categorización, priorización y resolución de tickets, asegurando que ningún problema quede sin atención y que se cumplan los niveles de servicio (SLAs) acordados.</p>
+      <h3>Mesa de Ayuda ITIL y Soporte</h3>
+      <p>Nuestros servicios siguen las mejores prácticas de ITIL. Contamos con ingenieros para soporte presencial en toda la región y asistencia remota inmediata para minimizar tiempos de inactividad.</p>
       
-      <h3>Soporte Presencial y Remoto</h3>
-      <p>Entendemos que algunas situaciones requieren manos en el sitio. Contamos con un equipo de ingenieros listos para desplazarse a sus oficinas en toda la región para resolver problemas de hardware o red. Para incidencias de software, nuestro soporte remoto seguro nos permite intervenir en segundos, minimizando los tiempos de inactividad.</p>
-      
-      <h3>Mantenimiento Preventivo Programado</h3>
-      <p>La mejor forma de resolver un problema es evitando que suceda. Ofrecemos planes de mantenimiento preventivo para sus equipos de cómputo, servidores y dispositivos de red. Limpieza física, optimización de software, actualización de parches de seguridad y revisión de estados de salud de discos duros son parte de nuestra rutina para extender la vida útil de su inversión tecnológica.</p>
-      
-      <h3>Gestión de Activos de TI</h3>
-      <p>Le ayudamos a mantener un inventario actualizado de todo su parque tecnológico. Saber qué tiene, quién lo usa y cuándo vence su garantía es fundamental para una planeación financiera inteligente y para asegurar que su empresa siempre cuente con las herramientas adecuadas.</p>
+      <h3>Mantenimiento y Gestión</h3>
+      <p>Brindamos mantenimiento preventivo programado para extender la vida útil de su inversión tecnológica y gestionamos su inventario de activos de TI y garantías.</p>
     `,
     features: [
       'Soporte técnico presencial en el sureste de México',
@@ -197,22 +154,19 @@ const servicesData: Record<string, any> = {
       'Consultoría técnica para proyectos especiales'
     ]
   },
-  'ingenieria-de-software': {
-    title: 'Ingeniería de Software',
+  'desarrollo-de-software': {
+    title: 'Desarrollo de software',
     icon: Code2,
     logos: ['mysql.png', 'java.png', 'php.png', 'html.png', 'css.png', 'js.png'],
     description: 'Desarrollo de aplicaciones a medida y soluciones de software empresarial.',
     content: `
-      <p>La tecnología debe adaptarse a su negocio, no al revés. En Inside Business Mexico, creamos soluciones de software personalizadas que impulsan la innovación y la eficiencia operativa de las empresas en el sureste de México.</p>
+      <p>Creamos soluciones de software personalizadas que impulsan la innovación y la eficiencia operativa de su empresa.</p>
       
-      <h3>Desarrollo de Aplicaciones a la Medida</h3>
-      <p>Nuestro equipo de desarrollo utiliza metodologías ágiles para crear aplicaciones web y móviles que resuelven retos específicos de su industria. Desde sistemas de gestión de inventarios hasta portales de clientes personalizados, construimos herramientas escalables, seguras y fáciles de usar que dan una ventaja competitiva real a su organización.</p>
+      <h3>Aplicaciones a la Medida</h3>
+      <p>Utilizamos metodologías ágiles para construir aplicaciones web y móviles escalables, seguras y fáciles de usar que resuelven los retos específicos de su industria.</p>
       
-      <h3>Integración de Sistemas</h3>
-      <p>Conectamos sus sistemas existentes para crear un flujo de información unificado. Desarrollamos APIs y middleware que permiten la comunicación entre su ERP, CRM y otras plataformas, eliminando la duplicación de datos y los procesos manuales.</p>
-      
-      <h3>Modernización de Aplicaciones</h3>
-      <p>Si su empresa cuenta con sistemas antiguos que frenan su crecimiento, le ayudamos a modernizarlos. Utilizamos arquitecturas modernas para transformar aplicaciones monolíticas en sistemas ágiles que pueden actualizarse y escalarse de forma independiente.</p>
+      <h3>Integración y Modernización</h3>
+      <p>Desarrollamos APIs para conectar sus sistemas existentes (ERP, CRM) y modernizamos aplicaciones monolíticas antiguas transformándolas en sistemas ágiles e independientes.</p>
     `,
     features: [
       'Desarrollo web y móvil personalizado',
@@ -228,16 +182,13 @@ const servicesData: Record<string, any> = {
     logos: ['gigas.png', 'azure.png'],
     description: 'Migración y gestión de infraestructura en la nube (AWS, Azure, Google Cloud).',
     content: `
-      <p>La nube ofrece agilidad, escalabilidad y eficiencia de costos. En Inside Business Mexico, le ayudamos a diseñar y ejecutar una estrategia de nube que se alinee con sus objetivos de negocio.</p>
+      <p>Le ayudamos a diseñar y ejecutar una estrategia de nube ágil, escalable y eficiente que se alinee con sus objetivos de negocio.</p>
       
-      <h3>Estrategia y Migración a la Nube</h3>
-      <p>Le acompañamos en su viaje hacia la nube (AWS, Microsoft Azure, Google Cloud). Analizamos sus cargas de trabajo actuales para determinar la mejor estrategia de migración: Rehosting, Replatforming o Refactoring. El objetivo es reducir sus costos de infraestructura física mientras aumenta la disponibilidad y la capacidad de recuperación ante desastres.</p>
+      <h3>Estrategia y Migración</h3>
+      <p>Analizamos sus cargas de trabajo para migrar a AWS, Azure o Google Cloud, reduciendo costos de infraestructura física y aumentando la disponibilidad.</p>
       
-      <h3>Soluciones de Nube Híbrida</h3>
-      <p>Entendemos que no todo puede o debe estar en la nube pública. Diseñamos entornos de nube híbrida que combinan la seguridad y el control de sus servidores locales con la elasticidad y potencia de la nube pública, permitiendo un flujo de datos seguro y eficiente entre ambos mundos.</p>
-      
-      <h3>Gestión y Optimización</h3>
-      <p>Una vez en la nube, nos aseguramos de que su entorno esté optimizado para el rendimiento y el costo. Implementamos políticas de gobernanza, monitoreamos el uso de recursos y aplicamos las mejores prácticas de seguridad en la nube.</p>
+      <h3>Nube Híbrida y Optimización</h3>
+      <p>Diseñamos entornos híbridos que combinan la seguridad local con la elasticidad de la nube pública. Además, optimizamos el rendimiento y los costos de su entorno cloud.</p>
     `,
     features: [
       'Migración de servidores locales a la nube',
@@ -253,19 +204,13 @@ const servicesData: Record<string, any> = {
     logos: ['dell.png', 'lenovo.png', 'hewlett.png', 'brother.png', 'ricoh.png', 'hp.png', 'epson.png'],
     description: 'Venta y distribución de equipos de cómputo, impresoras y periféricos de las mejores marcas para empresas en el sureste de México.',
     content: `
-      <p>En Inside Business Mexico, entendemos que contar con las herramientas adecuadas es fundamental para la productividad diaria. Nuestro servicio de Retail se enfoca en proveer a las empresas de todo el sureste de México con hardware de última generación, garantizando calidad, garantía y el mejor costo-beneficio del mercado.</p>
+      <p>Proveemos hardware de última generación, garantizando calidad, garantía y el mejor costo-beneficio del mercado para su empresa.</p>
       
-      <h3>Equipos de Cómputo Empresarial</h3>
-      <p>Distribuimos laptops, desktops y estaciones de trabajo (workstations) diseñadas para el uso rudo empresarial. Trabajamos con marcas líderes como Dell, HP y Lenovo, ofreciendo configuraciones que se adaptan desde tareas administrativas hasta diseño gráfico y procesamiento de datos pesado.</p>
+      <h3>Cómputo e Impresión</h3>
+      <p>Distribuimos laptops, desktops y workstations de uso rudo (Dell, HP, Lenovo), así como impresoras y escáneres de alta velocidad (Epson, Brother).</p>
       
-      <h3>Impresión y Digitalización</h3>
-      <p>Contamos con una amplia gama de impresoras láser, multifuncionales y escáneres de alta velocidad. Ya sea que su oficina requiera impresión a color de alta fidelidad o digitalización masiva de documentos, tenemos la solución perfecta con marcas como Epson, HP y Brother.</p>
-      
-      <h3>Periféricos y Accesorios</h3>
-      <p>Complementamos su infraestructura con monitores de alta resolución, teclados ergonómicos, sistemas de respaldo de energía (UPS) y todo lo necesario para crear espacios de trabajo eficientes y cómodos para sus colaboradores.</p>
-      
-      <h3>Garantía y Soporte Local</h3>
-      <p>A diferencia de las compras en línea genéricas, al adquirir su equipo con nosotros, cuenta con el respaldo de un equipo técnico local que le ayudará con la configuración inicial y la gestión de garantías directamente con el fabricante.</p>
+      <h3>Periféricos y Soporte Local</h3>
+      <p>Complementamos con monitores, UPS y accesorios. Todo con el respaldo de nuestro equipo técnico local para configuración y gestión de garantías.</p>
     `,
     features: [
       'Venta de laptops y desktops empresariales',
@@ -281,19 +226,13 @@ const servicesData: Record<string, any> = {
     logos: ['hpfinancial.png', 'dellfinancial.png'],
     description: 'Soluciones financieras flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
     content: `
-      <p>La actualización tecnológica es vital, pero a menudo requiere una inversión inicial considerable. En Inside Business Mexico, facilitamos el acceso a la mejor tecnología a través de esquemas de financiamiento y crédito simple diseñados para empresas en el sureste mexicano que buscan mantener su flujo de caja saludable.</p>
+      <p>Facilitamos el acceso a la mejor tecnología a través de esquemas de financiamiento diseñados para mantener su flujo de caja saludable.</p>
       
-      <h3>Crédito Simple para Tecnología</h3>
-      <p>Adquiera la infraestructura que su empresa necesita hoy y páguela en plazos fijos. Este esquema le permite ser dueño del equipo desde el primer día, facilitando la planificación financiera y aprovechando los beneficios de la depreciación de activos.</p>
-      
-      <h3>Financiamiento a Medida</h3>
-      <p>Trabajamos con diversas instituciones financieras para ofrecer planes de crédito que se ajusten a los ciclos de ingresos de su negocio. Ya sea para un proyecto de infraestructura de red o para la renovación total de su parque de cómputo, tenemos una opción financiera para usted.</p>
-      
-      <h3>Beneficios Fiscales y Operativos</h3>
-      <p>El financiamiento de TI le permite mantener su capital de trabajo intacto para las operaciones clave de su negocio, mientras adquiere tecnología que mejora su productividad y competitividad en el mercado.</p>
+      <h3>Crédito Simple y Financiamiento</h3>
+      <p>Adquiera infraestructura a plazos fijos, siendo dueño desde el primer día. Ofrecemos planes que se ajustan a los ciclos de ingresos de su negocio.</p>
       
       <h3>Proyectos Llave en Mano</h3>
-      <p>Podemos incluir en el financiamiento no solo el hardware, sino también el software y los servicios de implementación, permitiéndole arrancar proyectos complejos con una inversión inicial mínima.</p>
+      <p>Incluimos hardware, software y servicios de implementación en un solo financiamiento, permitiéndole arrancar proyectos con inversión inicial mínima y beneficios fiscales.</p>
     `,
     features: [
       'Crédito simple con tasas competitivas',
@@ -309,19 +248,13 @@ const servicesData: Record<string, any> = {
     logos: ['hpfinancial.png', 'dellfinancial.png'],
     description: 'Todo como Servicio: hardware, software e infraestructura bajo un modelo de suscripción.',
     content: `
-      <p>El modelo XAAS (Everything as a Service) está revolucionando la forma en que las empresas consumen tecnología. En lugar de comprar y mantener activos, usted paga una suscripción mensual por el uso de la tecnología, incluyendo hardware, software y servicios de soporte.</p>
+      <p>Consuma tecnología mediante una suscripción mensual que incluye hardware, software y soporte, transformando sus gastos de capital (CAPEX) en operativos (OPEX).</p>
       
-      <h3>Device as a Service (DaaS)</h3>
-      <p>Equipe a su personal con las últimas laptops y desktops sin la carga de la gestión del ciclo de vida. Nuestro servicio DaaS incluye la entrega, configuración, soporte continuo y retiro seguro del equipo al final de su vida útil, todo por una cuota mensual predecible.</p>
-      
-      <h3>Infrastructure as a Service (IaaS)</h3>
-      <p>Consuma recursos de cómputo, almacenamiento y redes bajo demanda. Ya sea en la nube pública o mediante infraestructura dedicada en sus instalaciones (on-premise as a service), pague solo por lo que utiliza y escale rápidamente según las necesidades de su negocio.</p>
+      <h3>DaaS e IaaS</h3>
+      <p>Equipe a su personal con equipos de cómputo gestionados (DaaS) y consuma recursos de infraestructura (IaaS) bajo demanda, pagando solo por lo que utiliza.</p>
       
       <h3>Software as a Service (SaaS)</h3>
-      <p>Acceda a las aplicaciones empresariales líderes (como Microsoft 365, Google Workspace, CRMs y ERPs) a través de la nube. Nos encargamos de la implementación, migración de datos y soporte a usuarios, asegurando que su equipo siempre tenga acceso a las últimas herramientas de productividad.</p>
-      
-      <h3>Beneficios del Modelo XAAS</h3>
-      <p>Transforme sus gastos de capital (CAPEX) en gastos operativos (OPEX). Reduzca la carga de trabajo de su equipo de TI, mejore la agilidad empresarial y asegure que su tecnología siempre esté actualizada y segura.</p>
+      <p>Acceda a aplicaciones líderes (Microsoft 365, Google Workspace, CRMs) en la nube con implementación y soporte incluidos.</p>
     `,
     features: [
       'Device as a Service (DaaS) para equipos de cómputo',
@@ -337,19 +270,13 @@ const servicesData: Record<string, any> = {
     logos: ['leviton.png', 'panduit.png', 'condunet.png'],
     description: 'Soluciones integrales de redes empresariales, cobre, fibra óptica y gestión de garantías.',
     content: `
-      <p>La infraestructura física de red es la base sobre la cual se construye toda la estrategia tecnológica de una empresa. En Inside Business Mexico, ofrecemos soluciones avanzadas de infraestructura y redes empresariales que garantizan una conectividad ininterrumpida y de alta velocidad para organizaciones en el sureste de México.</p>
+      <p>Ofrecemos soluciones avanzadas de infraestructura física que garantizan una conectividad ininterrumpida y de alta velocidad.</p>
       
-      <h3>Soluciones de Cobre y Fibra Óptica</h3>
-      <p>Implementamos sistemas de cableado estructurado en cobre (Categorías 6, 6A y 7) y fibra óptica (Monomodo y Multimodo) utilizando componentes de la más alta calidad. Nuestras instalaciones están diseñadas para soportar las demandas de ancho de banda actuales y futuras, asegurando una transmisión de datos eficiente y confiable.</p>
+      <h3>Cobre, Fibra y 40G</h3>
+      <p>Implementamos cableado estructurado (Cat 6, 6A, 7) y fibra óptica. Para centros de datos modernos, desplegamos tecnología de 40 Gigabit con latencias mínimas.</p>
       
-      <h3>Tecnología Forty Gigabit (40G)</h3>
-      <p>Para empresas con necesidades extremas de procesamiento de datos y centros de datos modernos, implementamos soluciones de red de 40 Gigabit. Esta tecnología permite manejar grandes volúmenes de información con latencias mínimas, ideal para entornos de virtualización densa y aplicaciones críticas de negocio.</p>
-      
-      <h3>Redes Empresariales de Alto Desempeño</h3>
-      <p>Diseñamos arquitecturas de red inteligentes que optimizan el flujo de información. Desde la segmentación lógica mediante VLANs hasta la implementación de protocolos de redundancia, nos aseguramos de que su red empresarial sea resiliente, segura y fácil de administrar.</p>
-      
-      <h3>Gestión Integral de Garantías</h3>
-      <p>Entendemos que su inversión debe estar protegida. Ofrecemos un servicio especializado de gestión de garantías con los principales fabricantes de infraestructura. Nos encargamos de todo el proceso técnico y administrativo para asegurar que sus componentes de red siempre cuenten con el respaldo oficial, minimizando cualquier riesgo operativo.</p>
+      <h3>Redes Inteligentes y Garantías</h3>
+      <p>Diseñamos arquitecturas resilientes y seguras. Además, gestionamos directamente las garantías con los fabricantes para proteger su inversión.</p>
     `,
     features: [
       'Redes empresariales de alto desempeño',

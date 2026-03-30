@@ -435,8 +435,8 @@ const Services = () => {
       icon: Cloud,
     },
     {
-      title: 'Ingeniería de Software',
-      slug: 'ingenieria-de-software',
+      title: 'Desarrollo de software',
+      slug: 'desarrollo-de-software',
       desc: 'Desarrollo de aplicaciones a la medida y soluciones de software empresarial.',
       icon: Code2,
     },
