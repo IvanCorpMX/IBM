@@ -482,27 +482,33 @@ const Services = () => {
 
 const XaasSection = () => {
   return (
-    <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.03)_0%,transparent_70%)]" />
+    <section className="py-24 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05)_0%,transparent_100%)]" />
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="glass-card p-8 lg:p-12 rounded-3xl border-brand-primary/20 flex flex-col lg:flex-row items-center gap-10">
-          <div className="w-20 h-20 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0">
-            <Monitor size={40} />
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20"
+        >
+          <div className="w-40 h-40 lg:w-64 lg:h-64 rounded-full bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0 ring-1 ring-brand-primary/20 shadow-[0_0_50px_rgba(16,185,129,0.15)]">
+            <Monitor size={80} className="lg:w-32 lg:h-32" />
           </div>
           <div className="flex-1 text-center lg:text-left">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4">
-              <Cloud size={14} />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-6">
+              <Cloud size={16} />
               Todo como Servicio
             </div>
-            <h3 className="text-3xl font-bold mb-4">XAAS (Everything as a Service)</h3>
-            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">XAAS (Everything as a Service)</h2>
+            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed mb-8 max-w-3xl">
               Transforma la adquisición de tecnología en tu empresa. Ofrecemos hardware, software e infraestructura bajo un modelo de suscripción flexible, permitiéndote escalar recursos según tus necesidades sin descapitalizarte.
             </p>
-            <Link to="/servicios/xaas" className="btn-primary inline-flex items-center gap-2">
-              Conocer más sobre XAAS <ArrowRight size={18} />
+            <Link to="/servicios/xaas" className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4">
+              Conocer más sobre XAAS <ArrowRight size={20} />
             </Link>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
