@@ -317,8 +317,9 @@ const ServiceDetail = () => {
     return (
       <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-primary/30">
         <Helmet>
-          <title>{`${service.title} en el Sureste de México | Expertos en TI`}</title>
-          <meta name="description" content={`${service.description} Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas en el sureste de México.`} />
+          <title>{`${service.title} en Tabasco y Sureste | IB Mexico`}</title>
+          <meta name="description" content={`${service.description} Cobertura industrial en Tabasco y el sureste de México.`} />
+          <link rel="canonical" href={`https://www.ib-mexico.com/servicios/${slug}`} />
         </Helmet>
 
         {/* Header */}
@@ -329,7 +330,7 @@ const ServiceDetail = () => {
               <span className="text-sm font-medium">Volver al inicio</span>
             </Link>
             <div className="flex items-center gap-2">
-              <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico - Expertos en TI en el sureste de México" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
+              <img src="/Logo_ib-mexico.webp" alt={`${service.title} - Corporativo - IB-Mexico`} className="w-8 h-8 object-contain" referrerPolicy="no-referrer" fetchPriority="high" />
               <span className="font-display font-bold text-lg tracking-tighter hidden sm:block">Inside Business Mexico</span>
             </div>
           </div>
@@ -412,7 +413,7 @@ const ServiceDetail = () => {
                       <div key={i} className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
                         <img 
                           src={`/partners/${logo}`} 
-                          alt={`Partner ${logo.split('.')[0]}`} 
+                          alt={`${service.title} - Partner ${logo.split('.')[0]} - IB-Mexico`} 
                           className="h-12 md:h-16 w-auto object-contain"
                           loading="lazy"
                         />
@@ -452,8 +453,15 @@ const ServiceDetail = () => {
         </main>
 
         <footer className="border-t border-white/5 py-12 bg-brand-dark/50">
-          <div className="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
-            <p>© {new Date().getFullYear()} Inside Business Mexico. Atendemos a todo el sureste de México.</p>
+          <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+            <div className="text-center md:text-left text-zinc-500 text-sm">
+              <p>© {new Date().getFullYear()} Inside Business Mexico. Atendemos a todo el sureste de México.</p>
+            </div>
+            <address className="text-center md:text-right text-zinc-500 text-sm not-italic">
+              <strong className="text-zinc-400 block mb-1">Sede Principal:</strong>
+              Villahermosa, Tabasco, México<br />
+              <a href="mailto:ventas@ib-mexico.com" className="hover:text-brand-primary transition-colors mt-1 inline-block">ventas@ib-mexico.com</a>
+            </address>
           </div>
         </footer>
       </div>
@@ -463,8 +471,9 @@ const ServiceDetail = () => {
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-primary/30">
       <Helmet>
-        <title>{`${service.title} en el Sureste de México | Expertos en TI`}</title>
-        <meta name="description" content={`${service.description} Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas en el sureste de México.`} />
+        <title>{`${service.title} en Tabasco y Sureste | IB Mexico`}</title>
+        <meta name="description" content={`${service.description} Cobertura industrial en Tabasco y el sureste de México.`} />
+        <link rel="canonical" href={`https://www.ib-mexico.com/servicios/${slug}`} />
       </Helmet>
 
       {/* Header */}
@@ -475,7 +484,7 @@ const ServiceDetail = () => {
             <span className="text-sm font-medium">Volver al inicio</span>
           </Link>
           <div className="flex items-center gap-2">
-            <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico - Expertos en TI en el sureste de México" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
+            <img src="/Logo_ib-mexico.webp" alt={`${service.title} - Corporativo - IB-Mexico`} className="w-8 h-8 object-contain" referrerPolicy="no-referrer" fetchPriority="high" />
             <span className="font-display font-bold text-lg tracking-tighter hidden sm:block">Inside Business Mexico</span>
           </div>
         </div>
@@ -516,7 +525,7 @@ const ServiceDetail = () => {
                         <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 min-w-[100px] justify-center">
                           <img 
                             src={`/partners/${logo}`} 
-                            alt={`Tecnología ${logo.split('.')[0]} - Inside Business Mexico`} 
+                            alt={`${service.title} - Tecnología ${logo.split('.')[0]} - IB-Mexico`} 
                             className="h-10 lg:h-12 w-auto object-contain"
                             loading="lazy"
                             onError={(e) => {
@@ -600,8 +609,15 @@ const ServiceDetail = () => {
       </main>
 
       <footer className="border-t border-white/5 py-12 bg-brand-dark/50">
-        <div className="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
-          <p>© {new Date().getFullYear()} Inside Business Mexico. Atendemos a todo el sureste de México.</p>
+        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-8 items-center">
+          <div className="text-center md:text-left text-zinc-500 text-sm">
+            <p>© {new Date().getFullYear()} Inside Business Mexico. Atendemos a todo el sureste de México.</p>
+          </div>
+          <address className="text-center md:text-right text-zinc-500 text-sm not-italic">
+            <strong className="text-zinc-400 block mb-1">Sede Principal:</strong>
+            Villahermosa, Tabasco, México<br />
+            <a href="mailto:ventas@ib-mexico.com" className="hover:text-brand-primary transition-colors mt-1 inline-block">ventas@ib-mexico.com</a>
+          </address>
         </div>
       </footer>
     </div>

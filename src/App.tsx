@@ -181,7 +181,7 @@ const Navbar = () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }}>
-          <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-14 h-14 object-contain" referrerPolicy="no-referrer" />
+          <img src="/Logo_ib-mexico.webp" alt="Infraestructura TI - Corporativo - IB-Mexico" className="w-14 h-14 object-contain" referrerPolicy="no-referrer" fetchPriority="high" />
           <div className="flex flex-col -gap-1">
             <span className="font-display font-bold text-xl tracking-tighter leading-none">Inside Business</span>
             <span className="font-display font-medium text-[10px] tracking-[0.2em] text-brand-primary uppercase">Mexico</span>
@@ -349,9 +349,10 @@ const IsoCertification = () => {
           <div className="w-64 md:w-80 shrink-0 bg-white p-8 rounded-3xl shadow-2xl ring-1 ring-white/20">
             <img 
               src="/iso27001.png" 
-              alt="Certificación ISO 27001" 
+              alt="Certificación ISO 27001 - Seguridad de la Información - IB-Mexico" 
               className="w-full h-auto object-contain"
               referrerPolicy="no-referrer"
+              fetchPriority="high"
             />
           </div>
           
@@ -628,7 +629,7 @@ const AboutUs = () => {
             <div className="aspect-square rounded-3xl overflow-hidden glass-card p-2">
               <img 
                 src="/equipo-ib.webp" 
-                alt="Equipo Inside Business Mexico" 
+                alt="Servicios TI - Corporativo - IB-Mexico" 
                 className="w-full h-full object-cover rounded-2xl transition-all duration-700"
                 referrerPolicy="no-referrer"
               />
@@ -747,12 +748,17 @@ const Footer = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="space-y-6">
             <div className="flex items-center gap-2">
-              <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
+              <img src="/Logo_ib-mexico.webp" alt="Infraestructura TI - Corporativo - IB-Mexico" className="w-12 h-12 object-contain" referrerPolicy="no-referrer" />
               <span className="font-display font-bold text-xl tracking-tighter">Inside Business Mexico</span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed">
               Líderes en soluciones de infraestructura TI y ciberseguridad para el sector empresarial en México. Innovación y confianza en cada proyecto.
             </p>
+            <address className="not-italic text-zinc-500 text-sm mt-4 border-t border-white/10 pt-4">
+              <strong className="text-zinc-400 block mb-1">Sede Principal:</strong>
+              Villahermosa, Tabasco, México<br />
+              <a href="mailto:ventas@ib-mexico.com" className="hover:text-brand-primary transition-colors mt-1 inline-block">ventas@ib-mexico.com</a>
+            </address>
             <div className="flex gap-4">
               <a href="https://mx.linkedin.com/company/ib-mexico" target="_blank" rel="noreferrer" className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center hover:bg-brand-primary hover:text-brand-dark transition-all">
                 <Linkedin size={20} />
@@ -846,8 +852,12 @@ const Home = () => {
   return (
     <>
       <Helmet>
-        <title>Ciberseguridad e Infraestructura TI en el Sureste de México | IB México</title>
-        <meta name="description" content="Expertos en infraestructura TI y ciberseguridad en el sureste de México. Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas." />
+        <title>Infraestructura TI y Ciberseguridad Industrial | IB Mexico</title>
+        <meta name="description" content="Expertos en infraestructura TI y ciberseguridad industrial. Soluciones tecnológicas de alto rendimiento en Tabasco y todo el sureste de México." />
+        <meta name="geo.region" content="MX-TAB" />
+        <meta name="geo.placename" content="Villahermosa" />
+        <meta name="geo.position" content="17.9892;-92.9475" />
+        <link rel="canonical" href="https://www.ib-mexico.com/" />
       </Helmet>
       <Hero />
       <IsoCertification />

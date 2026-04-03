@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /dev/
+Disallow: /api/
+Disallow: /*?*
+
+Sitemap: https://www.ib-mexico.com/sitemap.xml
