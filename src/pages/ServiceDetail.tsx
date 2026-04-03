@@ -28,13 +28,13 @@ const servicesData: Record<string, any> = {
     logos: ['ubiquiti.png', 'aruba.png', 'grandstream.png'],
     description: 'Diseño e implementación de redes LAN, switching y cableado estructurado de alto rendimiento en el sureste de México.',
     content: `
-      <p>Diseñamos, implementamos y gestionamos infraestructuras de networking que garantizan el máximo rendimiento y disponibilidad para su negocio.</p>
+      <p>Infraestructuras de networking de alto rendimiento y disponibilidad.</p>
       
-      <h3>Infraestructura de Red y Cableado</h3>
-      <p>Creamos arquitecturas escalables con equipos de última generación. Realizamos instalaciones de cableado estructurado y fibra óptica bajo estrictos estándares internacionales (TIA/EIA).</p>
+      <h3>Red y Cableado</h3>
+      <p>Arquitecturas escalables y cableado estructurado bajo estándares internacionales.</p>
       
       <h3>Wireless y Optimización</h3>
-      <p>Implementamos soluciones Wi-Fi 6/6E de alta densidad con gestión centralizada. Además, ofrecemos monitoreo proactivo 24/7 para resolver cuellos de botella antes de que afecten su productividad.</p>
+      <p>Wi-Fi 6/6E de alta densidad con gestión centralizada y monitoreo proactivo.</p>
     `,
     features: [
       'Certificación de cableado estructurado Cat 6, 6A y 7',
@@ -47,16 +47,16 @@ const servicesData: Record<string, any> = {
   'ciberseguridad-empresarial': {
     title: 'Ciberseguridad y Auditoría de Redes',
     icon: Shield,
-    logos: ['hllstone.png', 'fortinet.png', 'sophos.png', 'endpoint.png', 'eset.png', 'kaspersky.png', 'sangfor.png', 'bitdefender.png'],
+    logos: ['hllstone.png', 'fortinet.png', 'sophos.png', 'eset.png', 'kaspersky.png', 'sangfor.png', 'bitdefender.png'],
     description: 'Protección avanzada contra amenazas digitales, firewalls de próxima generación, SASE y auditorías de seguridad en el sureste de México.',
     content: `
-      <p>Ofrecemos soluciones de ciberseguridad integral para proteger los activos de su organización contra ataques de ransomware, phishing y malware.</p>
+      <p>Ciberseguridad integral contra ransomware, phishing y malware.</p>
       
       <h3>Protección Perimetral y SASE</h3>
-      <p>Implementamos Firewalls de Próxima Generación (NGFW) y arquitecturas SASE para unificar red y seguridad en la nube, garantizando un acceso seguro desde cualquier lugar.</p>
+      <p>Firewalls NGFW y arquitecturas SASE para acceso seguro desde cualquier lugar.</p>
       
       <h3>Auditorías y Endpoint (EDR)</h3>
-      <p>Realizamos escaneos de vulnerabilidades para identificar puntos débiles. Protegemos los dispositivos de los usuarios con soluciones EDR basadas en inteligencia artificial para bloquear ataques de día cero bajo un modelo Zero Trust.</p>
+      <p>Escaneos de vulnerabilidades y protección EDR con IA bajo modelo Zero Trust.</p>
     `,
     features: [
       'Implementación de Arquitectura SASE',
@@ -69,16 +69,16 @@ const servicesData: Record<string, any> = {
   'comunicaciones-unificadas': {
     title: 'Comunicaciones Unificadas y Telefonía IP',
     icon: Headset,
-    logos: ['grandstream.png', 'teams.png', 'zoom.png'],
+    logos: ['grandstream.png', 'teams.png', 'zoom.png', 'unite-by-net2phone.png'],
     description: 'Sistemas de colaboración, videoconferencia y telefonía IP con enfoque en omnicanalidad para empresas en el sureste de México.',
     content: `
-      <p>Integramos voz, video, mensajería y presencia en una sola plataforma para que su equipo trabaje de manera más inteligente desde cualquier lugar.</p>
+      <p>Voz, video y mensajería unificados para un trabajo más inteligente.</p>
       
       <h3>Telefonía IP y Omnicanalidad</h3>
-      <p>Migre a soluciones VoIP flexibles y unifique todos sus canales de contacto (voz, chat, redes sociales) en una sola interfaz para mejorar la atención al cliente.</p>
+      <p>Soluciones VoIP flexibles unificando canales de contacto en una sola interfaz.</p>
       
       <h3>Videoconferencia y Colaboración</h3>
-      <p>Diseñamos salas de videoconferencia profesionales integradas con Teams, Zoom y Webex. Facilitamos la colaboración en tiempo real con soporte técnico preventivo y correctivo.</p>
+      <p>Salas profesionales integradas con Teams, Zoom y Webex.</p>
     `,
     features: [
       'Estrategias de Omnicanalidad integradas',
@@ -91,16 +91,16 @@ const servicesData: Record<string, any> = {
   'computo-empresarial': {
     title: 'Cómputo Empresarial',
     icon: Cpu,
-    logos: ['dell.png', 'synology.png', 'lenovo.png', 'hewlett.png'],
+    logos: ['dell.png', 'synology.png', 'lenovo.png', 'hewlett.png', 'qnap.png'],
     description: 'Infraestructura de servidores, almacenamiento SAN/NAS y virtualización para empresas en el sureste de México.',
     content: `
-      <p>Proveemos soluciones de hardware empresarial de alto rendimiento que garantizan la integridad, disponibilidad y velocidad de acceso a su información crítica.</p>
+      <p>Hardware empresarial para garantizar la disponibilidad de su información.</p>
       
       <h3>Servidores y Almacenamiento</h3>
-      <p>Ofrecemos servidores de rack y torre de marcas líderes, junto con sistemas de almacenamiento NAS y SAN optimizados con deduplicación y compresión de datos.</p>
+      <p>Servidores, NAS y SAN optimizados con deduplicación de datos.</p>
       
       <h3>Virtualización y Respaldo</h3>
-      <p>Implementamos entornos virtuales (VMware, Hyper-V) para reducir costos operativos. Diseñamos estrategias de respaldo 3-2-1 y almacenamiento inmutable contra ransomware.</p>
+      <p>Entornos virtuales (VMware, Hyper-V) y estrategias de respaldo 3-2-1.</p>
     `,
     features: [
       'Venta y configuración de servidores Dell y HP',
@@ -113,16 +113,16 @@ const servicesData: Record<string, any> = {
   'hiperconvergencia-hci': {
     title: 'Hiperconvergencia HCI',
     icon: Cloud,
-    logos: ['nutanix.png', 'vmware.png', 'hyperv.png'],
+    logos: ['hyperv.png', 'proxmox.png', 'sangfor.png'],
     description: 'Infraestructura hiperconvergente para simplificar la gestión y escalar recursos de forma eficiente.',
     content: `
-      <p>Implementamos plataformas HCI que combinan cómputo, almacenamiento y redes en un solo sistema definido por software, eliminando la complejidad del centro de datos tradicional.</p>
+      <p>Plataformas HCI que combinan cómputo, almacenamiento y redes.</p>
       
       <h3>Simplicidad y Rendimiento</h3>
-      <p>Gestione todo desde una única interfaz y escale añadiendo nodos sin interrupciones. Ideal para bases de datos, VDI y aplicaciones críticas con alta disponibilidad integrada.</p>
+      <p>Gestión unificada y escalabilidad sin interrupciones para aplicaciones críticas.</p>
       
       <h3>Reducción de Costos</h3>
-      <p>Consolide su hardware para reducir significativamente los costos operativos (OPEX) y de capital, optimizando espacio y energía.</p>
+      <p>Consolidación de hardware para reducir costos operativos y de capital.</p>
     `,
     features: [
       'Implementación de clústeres hiperconvergentes',
@@ -135,11 +135,16 @@ const servicesData: Record<string, any> = {
   'help-desk-y-service-desk': {
     title: 'Help Desk y Service Desk',
     icon: LifeBuoy,
-    logos: ['prtg.png', 'teamviewer.png'],
+    logos: ['prtg.png', 'teamviewer.png', 'cpanel.png'],
     description: 'Servicios de soporte técnico especializado, mesa de ayuda y mantenimiento preventivo en el sureste de México.',
     content: `
       <p>Ofrecemos servicios de Help Desk y Service Desk diseñados para resolver incidencias de forma rápida y eficiente, asegurando la continuidad operativa de su empresa.</p>
       
+      <div class="my-8 p-6 bg-brand-primary/10 border border-brand-primary/20 rounded-2xl">
+        <h3 class="text-brand-primary mt-0 mb-2">Soluciones Especializadas para PyMES</h3>
+        <p class="mb-0 text-zinc-300">Entendemos que las pequeñas y medianas empresas necesitan soporte ágil y accesible. Ofrecemos paquetes de Service Desk a la medida de su presupuesto, brindando a su PyME el respaldo de un departamento de TI corporativo sin los altos costos de mantener personal interno. Desde la gestión de correos hasta el soporte de usuarios, nosotros nos encargamos.</p>
+      </div>
+
       <h3>Mesa de Ayuda ITIL y Soporte</h3>
       <p>Nuestros servicios siguen las mejores prácticas de ITIL. Contamos con ingenieros para soporte presencial en toda la región y asistencia remota inmediata para minimizar tiempos de inactividad.</p>
       
@@ -160,13 +165,13 @@ const servicesData: Record<string, any> = {
     logos: ['mysql.png', 'java.png', 'php.png', 'html.png', 'css.png', 'js.png'],
     description: 'Desarrollo de aplicaciones a medida y soluciones de software empresarial.',
     content: `
-      <p>Creamos soluciones de software personalizadas que impulsan la innovación y la eficiencia operativa de su empresa.</p>
+      <p>Soluciones de software personalizadas para la eficiencia operativa.</p>
       
       <h3>Aplicaciones a la Medida</h3>
-      <p>Utilizamos metodologías ágiles para construir aplicaciones web y móviles escalables, seguras y fáciles de usar que resuelven los retos específicos de su industria.</p>
+      <p>Desarrollo ágil de aplicaciones web y móviles escalables y seguras.</p>
       
       <h3>Integración y Modernización</h3>
-      <p>Desarrollamos APIs para conectar sus sistemas existentes (ERP, CRM) y modernizamos aplicaciones monolíticas antiguas transformándolas en sistemas ágiles e independientes.</p>
+      <p>Desarrollo de APIs y modernización de sistemas legados.</p>
     `,
     features: [
       'Desarrollo web y móvil personalizado',
@@ -179,16 +184,16 @@ const servicesData: Record<string, any> = {
   'cloud': {
     title: 'Soluciones Cloud',
     icon: Cloud,
-    logos: ['gigas.png', 'azure.png'],
+    logos: ['gigas.png', 'azure.png', 'aws.png', 'google.png'],
     description: 'Migración y gestión de infraestructura en la nube (AWS, Azure, Google Cloud).',
     content: `
-      <p>Le ayudamos a diseñar y ejecutar una estrategia de nube ágil, escalable y eficiente que se alinee con sus objetivos de negocio.</p>
+      <p>Estrategias de nube ágiles y escalables para su negocio.</p>
       
       <h3>Estrategia y Migración</h3>
-      <p>Analizamos sus cargas de trabajo para migrar a AWS, Azure o Google Cloud, reduciendo costos de infraestructura física y aumentando la disponibilidad.</p>
+      <p>Migración a AWS, Azure o Google Cloud para reducir costos físicos.</p>
       
       <h3>Nube Híbrida y Optimización</h3>
-      <p>Diseñamos entornos híbridos que combinan la seguridad local con la elasticidad de la nube pública. Además, optimizamos el rendimiento y los costos de su entorno cloud.</p>
+      <p>Entornos híbridos seguros y optimización de rendimiento y costos cloud.</p>
     `,
     features: [
       'Migración de servidores locales a la nube',
@@ -206,6 +211,12 @@ const servicesData: Record<string, any> = {
     content: `
       <p>Proveemos hardware de última generación, garantizando calidad, garantía y el mejor costo-beneficio del mercado para su empresa.</p>
       
+      <div class="my-8 p-8 bg-gradient-to-br from-blue-900/40 to-blue-600/10 border border-blue-500/30 rounded-3xl text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-32 h-32 bg-blue-500/20 rounded-full blur-[50px] -mr-10 -mt-10"></div>
+        <h2 class="text-3xl font-black text-white mb-2 relative z-10">Partners Oficiales de HP</h2>
+        <p class="text-blue-200 text-lg mb-0 relative z-10">Descubra la potencia y confiabilidad de los equipos HP empresariales. Ofrecemos el catálogo completo de laptops, workstations e impresoras HP con precios especiales y garantías extendidas para su negocio.</p>
+      </div>
+
       <h3>Cómputo e Impresión</h3>
       <p>Distribuimos laptops, desktops y workstations de uso rudo (Dell, HP, Lenovo), así como impresoras y escáneres de alta velocidad (Epson, Brother).</p>
       
@@ -226,13 +237,13 @@ const servicesData: Record<string, any> = {
     logos: ['hpfinancial.png', 'dellfinancial.png'],
     description: 'Soluciones financieras flexibles para la adquisición de tecnología sin descapitalizar su empresa.',
     content: `
-      <p>Facilitamos el acceso a la mejor tecnología a través de esquemas de financiamiento diseñados para mantener su flujo de caja saludable.</p>
+      <p>Esquemas de financiamiento para mantener su flujo de caja saludable.</p>
       
       <h3>Crédito Simple y Financiamiento</h3>
-      <p>Adquiera infraestructura a plazos fijos, siendo dueño desde el primer día. Ofrecemos planes que se ajustan a los ciclos de ingresos de su negocio.</p>
+      <p>Infraestructura a plazos fijos ajustados a los ciclos de su negocio.</p>
       
       <h3>Proyectos Llave en Mano</h3>
-      <p>Incluimos hardware, software y servicios de implementación en un solo financiamiento, permitiéndole arrancar proyectos con inversión inicial mínima y beneficios fiscales.</p>
+      <p>Hardware, software y servicios en un solo financiamiento con beneficios fiscales.</p>
     `,
     features: [
       'Crédito simple con tasas competitivas',
@@ -248,13 +259,13 @@ const servicesData: Record<string, any> = {
     logos: ['hpfinancial.png', 'dellfinancial.png'],
     description: 'Todo como Servicio: hardware, software e infraestructura bajo un modelo de suscripción.',
     content: `
-      <p>Consuma tecnología mediante una suscripción mensual que incluye hardware, software y soporte, transformando sus gastos de capital (CAPEX) en operativos (OPEX).</p>
+      <p>Suscripción mensual de hardware, software y soporte (OPEX).</p>
       
       <h3>DaaS e IaaS</h3>
-      <p>Equipe a su personal con equipos de cómputo gestionados (DaaS) y consuma recursos de infraestructura (IaaS) bajo demanda, pagando solo por lo que utiliza.</p>
+      <p>Equipos gestionados (DaaS) e infraestructura bajo demanda (IaaS).</p>
       
       <h3>Software as a Service (SaaS)</h3>
-      <p>Acceda a aplicaciones líderes (Microsoft 365, Google Workspace, CRMs) en la nube con implementación y soporte incluidos.</p>
+      <p>Aplicaciones líderes en la nube con implementación y soporte.</p>
     `,
     features: [
       'Device as a Service (DaaS) para equipos de cómputo',
@@ -270,13 +281,13 @@ const servicesData: Record<string, any> = {
     logos: ['leviton.png', 'panduit.png', 'condunet.png'],
     description: 'Soluciones integrales de redes empresariales, cobre, fibra óptica y gestión de garantías.',
     content: `
-      <p>Ofrecemos soluciones avanzadas de infraestructura física que garantizan una conectividad ininterrumpida y de alta velocidad.</p>
+      <p>Infraestructura física para conectividad de alta velocidad.</p>
       
       <h3>Cobre, Fibra y 40G</h3>
-      <p>Implementamos cableado estructurado (Cat 6, 6A, 7) y fibra óptica. Para centros de datos modernos, desplegamos tecnología de 40 Gigabit con latencias mínimas.</p>
+      <p>Cableado estructurado, fibra óptica y tecnología de 40 Gigabit.</p>
       
       <h3>Redes Inteligentes y Garantías</h3>
-      <p>Diseñamos arquitecturas resilientes y seguras. Además, gestionamos directamente las garantías con los fabricantes para proteger su inversión.</p>
+      <p>Arquitecturas resilientes y gestión directa de garantías con fabricantes.</p>
     `,
     features: [
       'Redes empresariales de alto desempeño',
@@ -301,6 +312,153 @@ const ServiceDetail = () => {
   }
 
   const Icon = service.icon;
+
+  if (slug === 'xaas') {
+    return (
+      <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-primary/30">
+        <Helmet>
+          <title>{`${service.title} en el Sureste de México | Expertos en TI`}</title>
+          <meta name="description" content={`${service.description} Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas en el sureste de México.`} />
+        </Helmet>
+
+        {/* Header */}
+        <header className="fixed top-0 left-0 right-0 z-50 bg-brand-dark/80 backdrop-blur-lg border-b border-white/10 py-4">
+          <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+            <Link to="/" className="flex items-center gap-2 text-zinc-400 hover:text-brand-primary transition-colors group">
+              <ArrowLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+              <span className="text-sm font-medium">Volver al inicio</span>
+            </Link>
+            <div className="flex items-center gap-2">
+              <img src="/Logo_ib-mexico.webp" alt="Inside Business Mexico - Expertos en TI en el sureste de México" className="w-8 h-8 object-contain" referrerPolicy="no-referrer" />
+              <span className="font-display font-bold text-lg tracking-tighter hidden sm:block">Inside Business Mexico</span>
+            </div>
+          </div>
+        </header>
+
+        <main className="pt-32 pb-24 px-6 relative overflow-hidden">
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-3xl h-[500px] bg-brand-primary/10 rounded-full blur-[120px] -z-10" />
+          
+          <div className="max-w-5xl mx-auto">
+            {/* Hero XAAS */}
+            <div className="text-center mb-16 lg:mb-24">
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="w-20 h-20 lg:w-24 lg:h-24 mx-auto rounded-3xl bg-brand-primary/10 flex items-center justify-center text-brand-primary mb-8 ring-1 ring-brand-primary/20"
+              >
+                <Icon size={48} />
+              </motion.div>
+              <motion.h1 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+                className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight leading-tight"
+              >
+                {service.title}
+              </motion.h1>
+              <motion.p 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2 }}
+                className="text-xl lg:text-2xl text-zinc-400 max-w-3xl mx-auto leading-relaxed"
+              >
+                {service.description}
+              </motion.p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 mb-20">
+              <motion.div 
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.3 }}
+                className="prose prose-lg prose-invert prose-zinc max-w-none text-zinc-400 leading-relaxed"
+                dangerouslySetInnerHTML={{ __html: service.content }}
+              />
+              <motion.div 
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.4 }}
+                className="glass-card p-8 lg:p-10 rounded-3xl border-white/10 relative overflow-hidden"
+              >
+                <div className="absolute top-0 right-0 w-32 h-32 bg-brand-primary/10 rounded-full blur-[40px] -mr-10 -mt-10" />
+                <h3 className="text-2xl font-bold mb-8 flex items-center gap-3 text-white relative z-10">
+                  <Zap className="text-brand-primary" size={24} />
+                  Beneficios Clave
+                </h3>
+                <ul className="space-y-6 relative z-10">
+                  {service.features.map((feature: string, i: number) => (
+                    <li key={i} className="flex items-start gap-4 text-zinc-300">
+                      <div className="w-6 h-6 rounded-full bg-brand-primary/20 flex items-center justify-center shrink-0 mt-0.5">
+                        <CheckCircle2 className="text-brand-primary" size={14} />
+                      </div>
+                      <span className="leading-relaxed">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </motion.div>
+            </div>
+
+            {service.logos && service.logos.length > 0 && (
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 }}
+                className="mb-20"
+              >
+                <h3 className="text-xl font-bold mb-8 text-center text-zinc-300">Nuestros Partners Financieros</h3>
+                <div className="glass-card p-8 rounded-3xl border-white/5 overflow-hidden">
+                  <div className="flex gap-16 items-center justify-center flex-wrap">
+                    {service.logos.map((logo: string, i: number) => (
+                      <div key={i} className="flex items-center justify-center grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-300">
+                        <img 
+                          src={`/partners/${logo}`} 
+                          alt={`Partner ${logo.split('.')[0]}`} 
+                          className="h-12 md:h-16 w-auto object-contain"
+                          loading="lazy"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            )}
+
+            {/* Contact CTA */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+              className="p-10 lg:p-16 bg-brand-primary/10 rounded-3xl border border-brand-primary/20 text-center relative overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay" />
+              <h2 className="text-3xl lg:text-4xl font-bold mb-4 text-white relative z-10">¿Listo para transformar tu infraestructura?</h2>
+              <p className="text-zinc-300 text-lg mb-8 max-w-2xl mx-auto relative z-10">
+                Contacta a nuestros expertos y descubre cómo XAAS puede optimizar los recursos de tu empresa sin descapitalizarte.
+              </p>
+              <Link 
+                to="/#contacto" 
+                state={{ selectedService: service.title }}
+                className="btn-primary inline-flex items-center gap-2 text-lg px-8 py-4 relative z-10"
+                onClick={() => {
+                  setTimeout(() => {
+                    document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' });
+                  }, 100);
+                }}
+              >
+                Solicitar Asesoría <ArrowLeft className="rotate-180" size={20}/>
+              </Link>
+            </motion.div>
+          </div>
+        </main>
+
+        <footer className="border-t border-white/5 py-12 bg-brand-dark/50">
+          <div className="max-w-7xl mx-auto px-6 text-center text-zinc-500 text-sm">
+            <p>© {new Date().getFullYear()} Inside Business Mexico. Atendemos a todo el sureste de México.</p>
+          </div>
+        </footer>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans selection:bg-brand-primary/30">
@@ -353,7 +511,7 @@ const ServiceDetail = () => {
                     Tecnologías y Marcas
                   </h3>
                   <div className="glass-card p-6 lg:p-8 rounded-2xl lg:rounded-3xl border-white/5 overflow-hidden relative">
-                    <div className="flex gap-12 items-center animate-marquee whitespace-nowrap py-4">
+                    <div key={slug} className="flex gap-12 items-center animate-marquee whitespace-nowrap py-4">
                       {[...service.logos, ...service.logos, ...service.logos].map((logo: string, i: number) => (
                         <div key={i} className="flex items-center gap-2 grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-300 min-w-[100px] justify-center">
                           <img 

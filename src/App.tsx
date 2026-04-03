@@ -232,7 +232,7 @@ const Hero = () => {
             Infraestructura TI de Próxima Generación
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold leading-[1.1] mb-4 lg:mb-6">
-            Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad en el sureste de México.
+            Expertos en <span className="text-gradient">Infraestructura TI</span> y Ciberseguridad desde el sureste de México.
           </h1>
           <p className="text-sm sm:text-lg text-zinc-400 mb-6 lg:mb-8 max-w-xl leading-relaxed">
             Networking, Ciberseguridad y Soluciones de Cómputo Empresarial diseñadas para la era digital. Autoridad técnica y confianza para las empresas líderes en México.
@@ -334,69 +334,38 @@ const Hero = () => {
   );
 };
 
-const Stats = () => {
-  const stats = [
-    { label: 'Años de Experiencia', value: '15+', icon: Zap },
-    { label: 'Soporte 24/7', value: '100%', icon: Headset },
-  ];
-
+const IsoCertification = () => {
   return (
-    <section className="py-20 border-y border-white/5 bg-zinc-900/50">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid lg:grid-cols-5 gap-12 items-center">
-          {/* Stats - 2 columns */}
-          <div className="lg:col-span-2 grid grid-cols-2 gap-8">
-            {stats.map((stat, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.1 }}
-                className="text-center flex flex-col items-center justify-center"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-white/5 mb-6 text-brand-primary border border-white/10 shadow-lg">
-                  <stat.icon size={32} />
-                </div>
-                <div className="text-4xl font-bold mb-2">{stat.value}</div>
-                <div className="text-xs text-zinc-500 uppercase tracking-widest font-semibold">{stat.label}</div>
-              </motion.div>
-            ))}
+    <section className="py-24 border-y border-white/5 bg-zinc-900/50 relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.05)_0%,transparent_100%)]" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.2 }}
+          className="flex flex-col md:flex-row items-center gap-12 lg:gap-20"
+        >
+          <div className="w-64 md:w-80 shrink-0 bg-white p-8 rounded-3xl shadow-2xl ring-1 ring-white/20">
+            <img 
+              src="/iso27001.png" 
+              alt="Certificación ISO 27001" 
+              className="w-full h-auto object-contain"
+              referrerPolicy="no-referrer"
+            />
           </div>
           
-          {/* ISO 27001 Card - 3 columns */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-            className="lg:col-span-3"
-          >
-            <div className="glass-card p-8 lg:p-10 rounded-3xl border-white/10 flex flex-col sm:flex-row items-center sm:items-start gap-8 relative overflow-hidden group hover:bg-white/[0.05] transition-colors duration-500">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-brand-primary/10 rounded-full blur-[80px] -mr-32 -mt-32 transition-transform duration-700 group-hover:scale-150" />
-              
-              <div className="bg-white p-5 rounded-2xl shadow-2xl flex items-center justify-center w-56 sm:w-64 h-28 sm:h-32 shrink-0 z-10 ring-1 ring-white/20">
-                <img 
-                  src="/iso27001.png" 
-                  alt="Certificación ISO 27001" 
-                  className="w-full h-full object-contain"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-              
-              <div className="text-center sm:text-left z-10">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-[10px] font-bold uppercase tracking-widest mb-4">
-                  <Shield size={14} />
-                  Seguridad de la Información
-                </div>
-                <h3 className="text-2xl font-bold mb-3 text-white">Certificación ISO 27001</h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
-                  Operamos bajo los más estrictos estándares internacionales. Nuestra certificación <strong>ISO 27001</strong> garantiza la confidencialidad, integridad y disponibilidad de su información. Protegemos sus datos empresariales contra ciberamenazas, asegurando el cumplimiento normativo y brindando la tranquilidad que su negocio necesita para crecer de forma segura.
-                </p>
-              </div>
+          <div className="text-center md:text-left flex-1">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-6">
+              <Shield size={16} />
+              Seguridad de la Información
             </div>
-          </motion.div>
-        </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">Certificación ISO 27001</h2>
+            <p className="text-zinc-300 text-lg md:text-xl leading-relaxed max-w-3xl">
+              Operamos bajo los más estrictos estándares internacionales. Nuestra certificación <strong>ISO 27001</strong> garantiza la confidencialidad, integridad y disponibilidad de su información. Protegemos sus datos empresariales contra ciberamenazas, asegurando el cumplimiento normativo y brindando la tranquilidad que su negocio necesita para crecer de forma segura.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
@@ -465,12 +434,6 @@ const Services = () => {
       icon: CreditCard,
     },
     {
-      title: 'XAAS',
-      slug: 'xaas',
-      desc: 'Todo como Servicio: hardware, software e infraestructura bajo un modelo de suscripción.',
-      icon: Monitor,
-    },
-    {
       title: 'Infraestructura y Redes Empresariales',
       slug: 'infraestructura-y-redes-empresariales',
       desc: 'Soluciones de redes, cobre, fibra óptica y gestión de garantías para su empresa.',
@@ -517,6 +480,34 @@ const Services = () => {
   );
 };
 
+const XaasSection = () => {
+  return (
+    <section className="py-20 bg-zinc-900/30 border-y border-white/5 relative overflow-hidden">
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_center,rgba(16,185,129,0.03)_0%,transparent_70%)]" />
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        <div className="glass-card p-8 lg:p-12 rounded-3xl border-brand-primary/20 flex flex-col lg:flex-row items-center gap-10">
+          <div className="w-20 h-20 rounded-2xl bg-brand-primary/10 flex items-center justify-center text-brand-primary shrink-0">
+            <Monitor size={40} />
+          </div>
+          <div className="flex-1 text-center lg:text-left">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-4">
+              <Cloud size={14} />
+              Todo como Servicio
+            </div>
+            <h3 className="text-3xl font-bold mb-4">XAAS (Everything as a Service)</h3>
+            <p className="text-zinc-400 text-lg leading-relaxed mb-6">
+              Transforma la adquisición de tecnología en tu empresa. Ofrecemos hardware, software e infraestructura bajo un modelo de suscripción flexible, permitiéndote escalar recursos según tus necesidades sin descapitalizarte.
+            </p>
+            <Link to="/servicios/xaas" className="btn-primary inline-flex items-center gap-2">
+              Conocer más sobre XAAS <ArrowRight size={18} />
+            </Link>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const CybersecurityFocus = () => {
   return (
     <section id="ciberseguridad" className="py-24 bg-brand-dark relative overflow-hidden">
@@ -529,25 +520,25 @@ const CybersecurityFocus = () => {
               <div className="space-y-4">
                 <div className="glass-card p-6 rounded-2xl border-brand-primary/20">
                   <Lock className="text-brand-primary mb-4" size={32} />
-                  <h4 className="font-bold mb-2">Zero Trust</h4>
-                  <p className="text-xs text-zinc-500">Arquitecturas de seguridad donde nunca se confía, siempre se verifica.</p>
+                  <h4 className="font-bold mb-2">Protección PyME</h4>
+                  <p className="text-xs text-zinc-500">Seguridad de nivel corporativo adaptada al presupuesto y tamaño de tu negocio.</p>
                 </div>
                 <div className="glass-card p-6 rounded-2xl">
                   <Shield className="text-brand-secondary mb-4" size={32} />
-                  <h4 className="font-bold mb-2">NGFW</h4>
-                  <p className="text-xs text-zinc-500">Firewalls de última generación con inspección profunda de paquetes.</p>
+                  <h4 className="font-bold mb-2">Continuidad</h4>
+                  <p className="text-xs text-zinc-500">Aseguramos que tu operación no se detenga ante ataques o fallos.</p>
                 </div>
               </div>
               <div className="space-y-4 pt-8">
                 <div className="glass-card p-6 rounded-2xl">
                   <Cloud className="text-brand-primary mb-4" size={32} />
-                  <h4 className="font-bold mb-2">SASE</h4>
-                  <p className="text-xs text-zinc-500">Secure Access Service Edge para proteger usuarios en cualquier lugar.</p>
+                  <h4 className="font-bold mb-2">Respaldo Seguro</h4>
+                  <p className="text-xs text-zinc-500">Copias de seguridad automatizadas para proteger tu información vital.</p>
                 </div>
                 <div className="glass-card p-6 rounded-2xl border-brand-secondary/20">
                   <BarChart3 className="text-brand-secondary mb-4" size={32} />
-                  <h4 className="font-bold mb-2">Auditoría</h4>
-                  <p className="text-xs text-zinc-500">Análisis de vulnerabilidades y cumplimiento normativo.</p>
+                  <h4 className="font-bold mb-2">Diagnóstico</h4>
+                  <p className="text-xs text-zinc-500">Evaluamos tus riesgos actuales y te damos un plan de acción claro.</p>
                 </div>
               </div>
             </div>
@@ -556,18 +547,18 @@ const CybersecurityFocus = () => {
           <div className="order-1 lg:order-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-primary/10 border border-brand-primary/20 text-brand-primary text-xs font-bold uppercase tracking-widest mb-6">
               <Shield size={14} />
-              Prioridad Máxima
+              Seguridad para PyMEs
             </div>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">No esperes a ser <span className="text-brand-primary">vulnerable</span>.</h2>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Protege el crecimiento de tu <span className="text-brand-primary">empresa</span>.</h2>
             <p className="text-lg text-zinc-400 mb-8 leading-relaxed">
-              En IB México entendemos que la ciberseguridad no es un producto, es una estrategia continua. Protegemos el activo más valioso de tu empresa: la información.
+              Las pequeñas y medianas empresas son el principal objetivo de los ciberataques hoy en día. En IB México democratizamos la ciberseguridad, ofreciendo soluciones robustas y accesibles para proteger tu patrimonio y la confianza de tus clientes.
             </p>
             <ul className="space-y-4 mb-10">
               {[
-                'Protección contra Ransomware y Malware avanzado',
-                'Seguridad en la Nube y entornos híbridos',
-                'Consultoría experta en cumplimiento (ISO 27001)',
-                'Monitoreo proactivo de amenazas 24/7'
+                'Soluciones de seguridad a la medida de tu presupuesto',
+                'Protección contra secuestro de datos (Ransomware)',
+                'Capacitación básica en seguridad para tu equipo',
+                'Soporte técnico ágil y cercano'
               ].map((item, i) => (
                 <li key={i} className="flex items-center gap-3 text-zinc-300">
                   <CheckCircle2 className="text-brand-primary" size={20} />
@@ -579,7 +570,7 @@ const CybersecurityFocus = () => {
               onClick={() => document.getElementById('contacto')?.scrollIntoView({ behavior: 'smooth' })}
               className="btn-primary w-full sm:w-auto"
             >
-              Solicitar Auditoría de Seguridad
+              Solicitar Diagnóstico Gratuito
             </button>
           </div>
         </div>
@@ -719,7 +710,7 @@ const ContactForm = () => {
                       ========================================================================
                     */
                     <iframe 
-                      src="https://outlook.office.com/bookwithme/user/d60d482122d6426d8e38f7285ba9b2a7@corp-mx.com?anonymous&ep=plink" 
+                      src="https://outlook.office.com/bookwithme/user/62386594ef02401684fe20842b3b81ba@corp-mx.com?anonymous&ep=plink" 
                       width="100%" 
                       height="100%" 
                       style={{ border: 0, minHeight: '650px' }} 
@@ -853,8 +844,9 @@ const Home = () => {
         <meta name="description" content="Expertos en infraestructura TI y ciberseguridad en el sureste de México. Ofrecemos soporte técnico, redes empresariales y soluciones tecnológicas." />
       </Helmet>
       <Hero />
-      <Stats />
+      <IsoCertification />
       <Services />
+      <XaasSection />
       <CybersecurityFocus />
       <AboutUs />
       <ContactForm />
