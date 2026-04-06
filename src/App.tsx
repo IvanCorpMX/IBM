@@ -4,7 +4,7 @@
  */
 
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Link, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import ServiceDetail from './pages/ServiceDetail';
@@ -37,13 +37,15 @@ import {
   Linkedin,
   Twitter,
   Monitor,
-  Calendar
+  Calendar,
+  Menu,
+  X
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 const scrollToSection = (id: string) => {
   if (window.location.pathname !== '/') {
-    window.location.href = `/#${id}`;
+    window.location.href = '/#' + id;
     return;
   }
   const element = document.getElementById(id);
@@ -161,6 +163,7 @@ const PartnerCarousel = () => {
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -169,10 +172,13 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  if (location.pathname !== '/') return null;
+  // Cerrar menú móvil al cambiar de ruta
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location]);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'bg-brand-dark/80 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-brand-dark/95 backdrop-blur-lg border-b border-white/10 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         <div className="flex items-center gap-3 cursor-pointer" onClick={() => {
           if (window.location.pathname !== '/') {
@@ -188,6 +194,7 @@ const Navbar = () => {
           </div>
         </div>
         
+        {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
           <button onClick={() => scrollToSection('servicios')} className="hover:text-brand-primary transition-colors">Servicios</button>
           <button onClick={() => scrollToSection('ciberseguridad')} className="hover:text-brand-primary transition-colors">Ciberseguridad</button>
@@ -200,13 +207,49 @@ const Navbar = () => {
             href="/brochure-ib-mexico.pdf" 
             target="_blank" 
             rel="noreferrer"
-            className="btn-primary py-2 px-5 text-sm flex items-center gap-2"
+            className="hidden sm:flex btn-primary py-2 px-5 text-sm items-center gap-2"
           >
             <FileText size={16} />
             Brochure
           </a>
+          
+          {/* Mobile Menu Toggle */}
+          <button 
+            className="md:hidden text-white p-2"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden bg-brand-dark border-b border-white/10 overflow-hidden"
+          >
+            <div className="px-6 py-8 flex flex-col gap-6 text-lg font-medium text-zinc-300">
+              <button onClick={() => scrollToSection('servicios')} className="text-left hover:text-brand-primary transition-colors">Servicios</button>
+              <button onClick={() => scrollToSection('ciberseguridad')} className="text-left hover:text-brand-primary transition-colors">Ciberseguridad</button>
+              <button onClick={() => scrollToSection('nosotros')} className="text-left hover:text-brand-primary transition-colors">Nosotros</button>
+              <button onClick={() => scrollToSection('contacto')} className="text-left hover:text-brand-primary transition-colors">Contacto</button>
+              <a 
+                href="/brochure-ib-mexico.pdf" 
+                target="_blank" 
+                rel="noreferrer"
+                className="btn-primary py-3 px-5 text-center flex items-center justify-center gap-2 mt-4"
+              >
+                <FileText size={20} />
+                Descargar Brochure
+              </a>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </nav>
   );
 };
@@ -857,6 +900,8 @@ const Home = () => {
         <meta name="geo.region" content="MX-TAB" />
         <meta name="geo.placename" content="Villahermosa" />
         <meta name="geo.position" content="17.9892;-92.9475" />
+        <meta name="author" content="Inside Business Mexico" />
+        <meta name="category" content="Tecnología e Infraestructura TI" />
         <link rel="canonical" href="https://www.ib-mexico.com/" />
       </Helmet>
       <Hero />
@@ -880,6 +925,10 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/privacidad" element={<PrivacyPolicy />} />
           <Route path="/servicios/:slug" element={<ServiceDetail />} />
+          <Route path="/contacto" element={<Navigate to="/#contacto" replace />} />
+          <Route path="/nosotros" element={<Navigate to="/#nosotros" replace />} />
+          <Route path="/servicios" element={<Navigate to="/#servicios" replace />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />
         <WhatsAppButton />
