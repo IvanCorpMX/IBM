@@ -1,68 +1,114 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Página de Inicio -->
    <url>
       <loc>https://www.ib-mexico.com/</loc>
-      <priority>1.0</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>weekly</changefreq>
+      <priority>1.0</priority>
    </url>
+
+   <!-- Networking y Conectividad -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/networking-y-conectividad</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
    </url>
+
+   <!-- Ciberseguridad Empresarial -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/ciberseguridad-empresarial</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
    </url>
+
+   <!-- Comunicaciones Unificadas -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/comunicaciones-unificadas</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
+
+   <!-- Cómputo Empresarial -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/computo-empresarial</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
+
+   <!-- Hiperconvergencia HCI -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/hiperconvergencia-hci</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
-   </url>
-   <url>
-      <loc>https://www.ib-mexico.com/servicios/desarrollo-de-software</loc>
       <priority>0.8</priority>
-      <changefreq>monthly</changefreq>
    </url>
-   <url>
-      <loc>https://www.ib-mexico.com/servicios/cloud</loc>
-      <priority>0.8</priority>
-      <changefreq>monthly</changefreq>
-   </url>
-   <url>
-      <loc>https://www.ib-mexico.com/servicios/retail</loc>
-      <priority>0.8</priority>
-      <changefreq>monthly</changefreq>
-   </url>
+
+   <!-- Help Desk y Service Desk -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/help-desk-y-service-desk</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
+
+   <!-- Desarrollo de Software -->
+   <url>
+      <loc>https://www.ib-mexico.com/servicios/desarrollo-de-software</loc>
+      <lastmod>2026-06-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <!-- Cloud Computing -->
+   <url>
+      <loc>https://www.ib-mexico.com/servicios/cloud</loc>
+      <lastmod>2026-06-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Retail / Hardware Empresarial -->
+   <url>
+      <loc>https://www.ib-mexico.com/servicios/retail</loc>
+      <lastmod>2026-06-01</lastmod>
+      <changefreq>monthly</changefreq>
+      <priority>0.7</priority>
+   </url>
+
+   <!-- Arrendamiento y Financiamiento -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/financiamiento-y-credito-simple</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
    </url>
+
+   <!-- XAAS (Everything as a Service) -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/xaas</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.9</priority>
    </url>
+
+   <!-- Infraestructura y Redes -->
    <url>
       <loc>https://www.ib-mexico.com/servicios/infraestructura-y-redes-empresariales</loc>
-      <priority>0.8</priority>
+      <lastmod>2026-06-01</lastmod>
       <changefreq>monthly</changefreq>
+      <priority>0.8</priority>
+   </url>
+
+   <!-- Aviso de Privacidad -->
+   <url>
+      <loc>https://www.ib-mexico.com/privacidad</loc>
+      <lastmod>2026-06-01</lastmod>
+      <changefreq>yearly</changefreq>
+      <priority>0.3</priority>
    </url>
 </urlset>
